@@ -1,0 +1,542 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply antialiased text-gray-200 bg-[#0a0a0a];
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-blue-700;
+}
+
+/* Gradient text animation */
+.animate-gradient {
+  background: linear-gradient(to right, #ff6b00, #ff9900, #ff6b00);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 3s linear infinite;
+}
+
+@keyframes gradient {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Glow effects */
+.glow {
+  box-shadow: 0 0 15px rgba(255, 107, 0, 0.5);
+}
+
+.glow:hover {
+  box-shadow: 0 0 30px rgba(255, 107, 0, 0.8);
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(255, 107, 0, 0.2);
+}
+
+/* Timeline animations */
+@keyframes slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-left {
+  animation: slide-left 0.8s ease-out forwards;
+}
+
+.animate-slide-right {
+  animation: slide-right 0.8s ease-out forwards;
+}
+
+/* Skill card animations */
+.skill-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+
+.skill-card:hover::before {
+  transform: translateX(100%);
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Add this to your CSS */
+.spotlight-card {
+  --mouse-x: 0;
+  --mouse-y: 0;
+}
+
+.card-spotlight {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y),
+    color-mix(in srgb, var(--card-color) 8%, transparent),
+    transparent 50%
+  );
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.spotlight-card:hover .card-spotlight {
+  opacity: 1;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y),
+    color-mix(in srgb, var(--card-color) 15%, transparent),
+    transparent 50%
+  );
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+/* Update progress bar animation */
+.progress-bar {
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Add smooth scale transition */
+.hover-scale {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+
+/* Smooth fade-in animation */
+@keyframes smoothFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: smoothFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Project Card Styles */
+.project-card {
+  transform-style: preserve-3d;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  background: rgba(17, 17, 17, 0.3);
+  border-radius: 0.75rem;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Project Image Animation */
+.project-card img {
+  transform-origin: center;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Project Buttons */
+.project-btn {
+  @apply p-3 rounded-full text-white;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .project-btn {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.project-card:hover .project-btn:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.project-card:hover .project-btn:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+/* Project Tags Animation */
+.project-card span {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover span {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Shimmer Effect */
+.project-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%) skewX(-15deg);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+}
+
+.project-card:hover::after {
+  transform: translateX(100%) skewX(-15deg);
+}
+
+/* Overlay Animation */
+.project-card .overlay {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+/* Progress Bar Animation */
+.project-progress {
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Center Card Special Effect */
+.center-card {
+  position: relative;
+}
+
+.center-card::before,
+.center-card::after {
+  content: '';
+  position: absolute;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #4ade80,
+    transparent
+  );
+  width: 120%;
+  height: 2px;
+  left: -10%;
+  transform: translateY(-8px) scaleX(0);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 3;
+}
+
+.center-card::before {
+  top: 0;
+  transform-origin: left;
+}
+
+.center-card::after {
+  bottom: 0;
+  transform-origin: right;
+}
+
+.center-card:hover::before {
+  transform: translateY(-8px) scaleX(1);
+  transform-origin: right;
+}
+
+.center-card:hover::after {
+  transform: translateY(8px) scaleX(1);
+  transform-origin: left;
+}
+
+/* Add glow effect to the lines */
+.center-card:hover::before,
+.center-card:hover::after {
+  filter: drop-shadow(0 0 8px #4ade80);
+}
+
+/* Adjust the project card hover animation for center card */
+.center-card.project-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 0 30px rgba(74, 222, 128, 0.1);
+}
+
+/* Special border color for center card */
+.center-card .project-progress {
+  background: linear-gradient(90deg, #4ade80, #22c55e);
+}
+
+/* Contact Section Styles */
+.contact-card {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(255, 107, 0, 0.1);
+}
+
+.contact-link {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.contact-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 107, 0, 0.1),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+
+.contact-link:hover::before {
+  transform: translateX(100%);
+}
+
+.contact-link:hover {
+  transform: translateX(8px);
+}
+
+/* Form Styles */
+.form-group {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background: rgba(31, 41, 55, 0.5);
+  backdrop-filter: blur(4px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(55, 65, 81);
+}
+
+/* Floating Label Animation */
+.form-group label {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  padding: 0 0.25rem;
+  color: rgb(156, 163, 175);
+  font-size: 0.875rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 50%, rgba(17, 24, 39, 0.8) 50%);
+}
+
+.form-group input:focus ~ label,
+.form-group textarea:focus ~ label,
+.form-group input:not(:placeholder-shown) ~ label,
+.form-group textarea:not(:placeholder-shown) ~ label {
+  transform: translateY(-1.4rem) scale(0.85);
+  color: rgb(249, 115, 22);
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.8) 50%, transparent 50%);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: rgb(249, 115, 22);
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.1);
+  outline: none;
+}
+
+/* Input Shine Effect */
+.form-group input:focus,
+.form-group textarea:focus {
+  background: linear-gradient(
+    120deg,
+    rgba(249, 115, 22, 0.05),
+    rgba(31, 41, 55, 0.7),
+    rgba(249, 115, 22, 0.05)
+  );
+  background-size: 200% auto;
+  animation: inputShine 3s linear infinite;
+}
+
+@keyframes inputShine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Submit Button Animation */
+@keyframes buttonShine {
+  from {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  to {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+.form-group button:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: buttonShine 4s linear infinite;
+}
+
+/* Success Message Animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.success-popup-enter {
+  animation: slideIn 0.5s ease forwards;
+}
+
+.success-popup-exit {
+  animation: slideOut 0.5s ease forwards;
+}
+
+/* Footer Styles */
+.social-icon-link {
+  @apply p-2 rounded-full bg-gray-800/50 text-gray-400 hover:text-orange-400 
+         hover:bg-orange-500/10 transition-all transform hover:scale-110;
+}
+
+.footer-link {
+  position: relative;
+  display: inline-block;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, #ff6b00, transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.footer-link:hover::after {
+  transform: scaleX(1);
+}

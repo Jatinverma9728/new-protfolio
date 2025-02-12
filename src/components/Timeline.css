@@ -1,0 +1,198 @@
+.timeline-container {
+  position: fixed;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 80vh;
+  z-index: 100;
+}
+
+.timeline {
+  position: relative;
+  height: 100%;
+  width: 2px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.timeline-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  transition: height 0.1s ease-out;
+}
+
+/* If you have timeline items, you might want to add this */
+.timeline-item {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.timeline-item.active {
+  opacity: 1;
+}
+
+.timeline-label {
+  position: absolute;
+  left: 20px;
+  white-space: nowrap;
+  color: #fff;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+}
+
+.timeline-item.active .timeline-label {
+  opacity: 0.7;
+  transform: translateX(0);
+}
+
+.timeline-item:hover .timeline-label {
+  opacity: 1;
+}
+
+.timeline-section {
+  position: relative;
+  padding: 4rem 0;
+  margin: 2rem 0;
+  min-height: 100vh;
+}
+
+.timeline-progress-bar {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 70vh;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 1;
+}
+
+.timeline-progress-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #3b82f6;
+  transition: height 0.1s ease-out;
+}
+
+.timeline-content {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Animation classes */
+.animate-slide-left {
+  animation: slideLeft 0.5s ease-out forwards;
+}
+
+.animate-slide-right {
+  animation: slideRight 0.5s ease-out forwards;
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.8;
+    filter: blur(3px);
+    box-shadow: 
+      0 0 10px #3b82f6,
+      0 0 20px #3b82f6,
+      0 0 30px #3b82f6,
+      0 0 40px #3b82f6;
+  }
+  50% {
+    opacity: 1;
+    filter: blur(4px);
+    box-shadow: 
+      0 0 15px #3b82f6,
+      0 0 30px #3b82f6,
+      0 0 45px #3b82f6,
+      0 0 60px #3b82f6;
+  }
+  100% {
+    opacity: 0.8;
+    filter: blur(3px);
+    box-shadow: 
+      0 0 10px #3b82f6,
+      0 0 20px #3b82f6,
+      0 0 30px #3b82f6,
+      0 0 40px #3b82f6;
+  }
+}
+
+.timeline-glow {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.timeline-card {
+  --mouse-x: 0;
+  --mouse-y: 0;
+}
+
+.timeline-card .card-spotlight {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 126, 0, 0.06),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.timeline-card:hover .card-spotlight {
+  opacity: 1;
+}
+
+.timeline-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    400px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 126, 0, 0.1),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 1;
+}
+
+.timeline-card:hover::before {
+  opacity: 1;
+} 
