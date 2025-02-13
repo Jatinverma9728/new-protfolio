@@ -1,13 +1,13 @@
-import React, { useEffect, useRef, useState, FormEvent } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useInView } from 'react-intersection-observer';
-import TypewriterText from './components/TypewriterText';
-import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
-import { Timeline } from './components/Timeline';
-import ScrollToTopButton from './components/ScrollToTopButton';
-import Scene3D from './components/Scene3D';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef, useState, FormEvent } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useInView } from "react-intersection-observer";
+import TypewriterText from "./components/TypewriterText";
+import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
+import { Timeline } from "./components/Timeline";
+import ScrollToTopButton from "./components/ScrollToTopButton";
+import Scene3D from "./components/Scene3D";
+import { motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,36 +22,36 @@ function App() {
     years: 0,
     projects: 0,
     clients: 0,
-    technologies: 0
+    technologies: 0,
   });
 
   const quickFactsRef = useRef(null);
   const [factsRef, factsInView] = useInView({
     threshold: 0.5,
-    triggerOnce: true
+    triggerOnce: true,
   });
 
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
   const [formStatus, setFormStatus] = useState({
     submitted: false,
     submitting: false,
-    error: null as string | null
+    error: null as string | null,
   });
 
   const [showSuccess, setShowSuccess] = useState(false);
 
   const [newsletter, setNewsletter] = useState({
-    email: '',
+    email: "",
     submitting: false,
     success: false,
-    error: null as string | null
+    error: null as string | null,
   });
 
   // Add state for mobile menu
@@ -65,17 +65,17 @@ function App() {
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     // Use requestAnimationFrame for smooth performance
     requestAnimationFrame(() => {
-      const cards = document.querySelectorAll('.spotlight-card');
-      
+      const cards = document.querySelectorAll(".spotlight-card");
+
       cards.forEach((card) => {
         const rect = (card as HTMLElement).getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        const color = (card as HTMLElement).dataset.color || '#ff6b00';
-        
-        (card as HTMLElement).style.setProperty('--mouse-x', `${x}px`);
-        (card as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
-        (card as HTMLElement).style.setProperty('--card-color', color);
+        const color = (card as HTMLElement).dataset.color || "#ff6b00";
+
+        (card as HTMLElement).style.setProperty("--mouse-x", `${x}px`);
+        (card as HTMLElement).style.setProperty("--mouse-y", `${y}px`);
+        (card as HTMLElement).style.setProperty("--card-color", color);
       });
     });
   };
@@ -86,8 +86,8 @@ function App() {
       const tl = gsap.timeline({
         defaults: {
           duration: 1,
-          ease: "power3.out"
-        }
+          ease: "power3.out",
+        },
       });
 
       tl.from(headerRef.current, {
@@ -96,7 +96,7 @@ function App() {
       });
 
       // Batch process fade-in animations
-      const fadeElements = gsap.utils.toArray('.fade-in');
+      const fadeElements = gsap.utils.toArray(".fade-in");
       fadeElements.forEach((element: any) => {
         ScrollTrigger.create({
           trigger: element,
@@ -105,20 +105,20 @@ function App() {
           animation: gsap.from(element, {
             opacity: 0,
             y: 50,
-          })
+          }),
         });
       });
 
-      gsap.utils.toArray('.parallax-card').forEach((card: any) => {
+      gsap.utils.toArray(".parallax-card").forEach((card: any) => {
         gsap.to(card, {
           scrollTrigger: {
             trigger: card,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 1
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1,
           },
           y: -50,
-          ease: 'none'
+          ease: "none",
         });
       });
     });
@@ -140,9 +140,9 @@ function App() {
             years: Math.round(counts.years),
             projects: Math.round(counts.projects),
             clients: Math.round(counts.clients),
-            technologies: Math.round(counts.technologies)
+            technologies: Math.round(counts.technologies),
           });
-        }
+        },
       });
     }
   }, [factsInView]);
@@ -234,7 +234,8 @@ function App() {
     {
       title: "Paramprik Swad E-commerce",
       description: "Full-stack MERN application with real-time updates",
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=70",
+      image:
+        "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=70",
       tags: ["TypeScript", "TailwindCSS", "Ai Chatbot", "React"],
       liveUrl: "https://paramprkswad.vercel.app/",
       githubUrl: "https://github.com/Jatinverma9728/new-paramprikswad",
@@ -263,18 +264,20 @@ function App() {
     },
   ];
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setFormStatus(prev => ({ ...prev, submitting: true }));
-    
+    setFormStatus((prev) => ({ ...prev, submitting: true }));
+
     try {
       const response = await fetch("https://formspree.io/f/mjkgeejp", {
         method: "POST",
@@ -290,54 +293,53 @@ function App() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to send message');
+        throw new Error("Failed to send message");
       }
-      
+
       setFormStatus({
         submitted: true,
         submitting: false,
-        error: null
+        error: null,
       });
-      
+
       setFormData({
-        name: '',
-        email: '',
-        message: ''
+        name: "",
+        email: "",
+        message: "",
       });
-      
+
       // Show success message
       setShowSuccess(true);
-      
+
       // Hide success message after 5 seconds
       setTimeout(() => {
         setShowSuccess(false);
       }, 5000);
-      
     } catch (error) {
-      console.error('Form submission error:', error);
+      console.error("Form submission error:", error);
       setFormStatus({
         submitted: false,
         submitting: false,
-        error: 'Failed to send message. Please try again.'
+        error: "Failed to send message. Please try again.",
       });
     }
   };
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!newsletter.email) {
-      setNewsletter(prev => ({
+      setNewsletter((prev) => ({
         ...prev,
-        error: 'Please enter your email'
+        error: "Please enter your email",
       }));
       return;
     }
 
-    setNewsletter(prev => ({
+    setNewsletter((prev) => ({
       ...prev,
       submitting: true,
-      error: null
+      error: null,
     }));
 
     try {
@@ -349,35 +351,34 @@ function App() {
         body: JSON.stringify({
           email: newsletter.email,
           _subject: "New Newsletter Subscription",
-          message: `New subscription request from ${newsletter.email}`
+          message: `New subscription request from ${newsletter.email}`,
         }),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to subscribe');
+        throw new Error("Failed to subscribe");
       }
-      
-      setNewsletter(prev => ({
+
+      setNewsletter((prev) => ({
         ...prev,
         submitting: false,
         success: true,
-        email: ''
+        email: "",
       }));
 
       // Reset success message after 3 seconds
       setTimeout(() => {
-        setNewsletter(prev => ({
+        setNewsletter((prev) => ({
           ...prev,
-          success: false
+          success: false,
         }));
       }, 3000);
-
     } catch (error) {
-      console.error('Newsletter subscription error:', error);
-      setNewsletter(prev => ({
+      console.error("Newsletter subscription error:", error);
+      setNewsletter((prev) => ({
         ...prev,
         submitting: false,
-        error: 'Failed to subscribe. Please try again.'
+        error: "Failed to subscribe. Please try again.",
       }));
     }
   };
@@ -385,20 +386,20 @@ function App() {
   // Define active services with their links
   const activeServices = [
     {
-      name: 'Web Development',
-      link: '#projects',
-      description: 'Modern web applications with React & Next.js'
+      name: "Web Development",
+      link: "#projects",
+      description: "Modern web applications with React & Next.js",
     },
     {
-      name: 'Frontend Development',
-      link: '#skills',
-      description: 'Responsive and interactive user interfaces'
+      name: "Frontend Development",
+      link: "#skills",
+      description: "Responsive and interactive user interfaces",
     },
     {
-      name: 'Backend Development',
-      link: '#experience',
-      description: 'Scalable backend solutions'
-    }
+      name: "Backend Development",
+      link: "#experience",
+      description: "Scalable backend solutions",
+    },
   ];
 
   // Memoize components that don't need frequent updates
@@ -415,11 +416,11 @@ function App() {
       >
         <nav className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <a 
-              href="#" 
+            <a
+              href="#"
               onClick={(e) => {
                 e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                window.scrollTo({ top: 0, behavior: "smooth" });
               }}
               className="group flex items-center gap-3 hover:scale-105 transition-all duration-300"
             >
@@ -436,7 +437,7 @@ function App() {
                     className="fill-none stroke-orange-500/30"
                     strokeWidth="2"
                   />
-                  
+
                   {/* Animated circle stroke */}
                   <circle
                     cx="50"
@@ -493,9 +494,11 @@ function App() {
                 </svg>
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 
+                <span
+                  className="text-xl font-bold bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 
                                 bg-clip-text text-transparent animate-gradient bg-300% group-hover:bg-orange-400 
-                                transition-colors">
+                                transition-colors"
+                >
                   Jatin Verma
                 </span>
                 <span className="text-xs text-gray-400 group-hover:text-orange-400 transition-colors">
@@ -503,46 +506,109 @@ function App() {
                 </span>
               </div>
             </a>
-            
+
             {/* Mobile Menu Button */}
-            <button 
+            <button
               className="md:hidden p-2 text-gray-400 hover:text-orange-500 transition-colors"
               onClick={toggleMobileMenu}
               aria-label="Toggle menu"
             >
               <div className="w-6 h-5 relative flex flex-col justify-between">
-                <span className={`w-full h-0.5 bg-current transform transition-all duration-300 ease-in-out ${
-                  isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
-                }`} />
-                <span className={`w-full h-0.5 bg-current transition-all duration-300 ease-in-out ${
-                  isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
-                }`} />
-                <span className={`w-full h-0.5 bg-current transform transition-all duration-300 ease-in-out ${
-                  isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
-                }`} />
+                <span
+                  className={`w-full h-0.5 bg-current transform transition-all duration-300 ease-in-out ${
+                    isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
+                  }`}
+                />
+                <span
+                  className={`w-full h-0.5 bg-current transition-all duration-300 ease-in-out ${
+                    isMobileMenuOpen ? "opacity-0" : "opacity-100"
+                  }`}
+                />
+                <span
+                  className={`w-full h-0.5 bg-current transform transition-all duration-300 ease-in-out ${
+                    isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
+                  }`}
+                />
               </div>
             </button>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
-              <a href="#about" className="hover:text-orange-500 transition-colors">About</a>
-              <a href="#experience" className="hover:text-orange-500 transition-colors">Experience</a>
-              <a href="#skills" className="hover:text-orange-500 transition-colors">Skills</a>
-              <a href="#projects" className="hover:text-orange-500 transition-colors">Projects</a>
-              <a href="#contact" className="hover:text-orange-500 transition-colors">Contact</a>
+              <a
+                href="#about"
+                className="hover:text-orange-500 transition-colors"
+              >
+                About
+              </a>
+              <a
+                href="#experience"
+                className="hover:text-orange-500 transition-colors"
+              >
+                Experience
+              </a>
+              <a
+                href="#skills"
+                className="hover:text-orange-500 transition-colors"
+              >
+                Skills
+              </a>
+              <a
+                href="#projects"
+                className="hover:text-orange-500 transition-colors"
+              >
+                Projects
+              </a>
+              <a
+                href="#contact"
+                className="hover:text-orange-500 transition-colors"
+              >
+                Contact
+              </a>
             </div>
           </div>
 
           {/* Mobile Menu - Updated with rounded corners */}
-          <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'} pt-4 
+          <div
+            className={`md:hidden ${isMobileMenuOpen ? "block" : "hidden"} pt-4 
                           border-t border-orange-500/20 mt-4 rounded-b-xl 
-                          bg-black/30 backdrop-blur-md`}>
+                          bg-black/30 backdrop-blur-md`}
+          >
             <div className="flex flex-col space-y-4 px-2 pb-4">
-              <a href="#about" className="hover:text-orange-500 transition-colors px-3 py-2 rounded-lg hover:bg-orange-500/10" onClick={() => setIsMobileMenuOpen(false)}>About</a>
-              <a href="#experience" className="hover:text-orange-500 transition-colors px-3 py-2 rounded-lg hover:bg-orange-500/10" onClick={() => setIsMobileMenuOpen(false)}>Experience</a>
-              <a href="#skills" className="hover:text-orange-500 transition-colors px-3 py-2 rounded-lg hover:bg-orange-500/10" onClick={() => setIsMobileMenuOpen(false)}>Skills</a>
-              <a href="#projects" className="hover:text-orange-500 transition-colors px-3 py-2 rounded-lg hover:bg-orange-500/10" onClick={() => setIsMobileMenuOpen(false)}>Projects</a>
-              <a href="#contact" className="hover:text-orange-500 transition-colors px-3 py-2 rounded-lg hover:bg-orange-500/10" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
+              <a
+                href="#about"
+                className="hover:text-orange-500 transition-colors px-3 py-2 rounded-lg hover:bg-orange-500/10"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About
+              </a>
+              <a
+                href="#experience"
+                className="hover:text-orange-500 transition-colors px-3 py-2 rounded-lg hover:bg-orange-500/10"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Experience
+              </a>
+              <a
+                href="#skills"
+                className="hover:text-orange-500 transition-colors px-3 py-2 rounded-lg hover:bg-orange-500/10"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Skills
+              </a>
+              <a
+                href="#projects"
+                className="hover:text-orange-500 transition-colors px-3 py-2 rounded-lg hover:bg-orange-500/10"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Projects
+              </a>
+              <a
+                href="#contact"
+                className="hover:text-orange-500 transition-colors px-3 py-2 rounded-lg hover:bg-orange-500/10"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact
+              </a>
             </div>
           </div>
         </nav>
@@ -558,15 +624,28 @@ function App() {
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 sm:mb-8">
               <TypewriterText />
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed 
-              drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
-              I'm a <span className="text-orange-400">BCA final-year student</span> and 
-              <span className="text-orange-400"> full-stack developer</span> with expertise in 
-              <span className="text-orange-400"> React</span>, 
-              <span className="text-orange-400"> TypeScript</span>, and 
-              <span className="text-orange-400"> UI/UX design</span>. 
-              Passionate about creating <span className="text-orange-400">scalable web applications</span> and 
-              delivering <span className="text-orange-400">exceptional user experiences</span>.
+            <p
+              className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed 
+              drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
+            >
+              I'm a{" "}
+              <span className="text-orange-400">BCA final-year student</span>{" "}
+              and
+              <span className="text-orange-400">
+                {" "}
+                full-stack developer
+              </span>{" "}
+              with expertise in
+              <span className="text-orange-400"> React</span>,
+              <span className="text-orange-400"> TypeScript</span>, and
+              <span className="text-orange-400"> UI/UX design</span>. Passionate
+              about creating{" "}
+              <span className="text-orange-400">scalable web applications</span>{" "}
+              and delivering{" "}
+              <span className="text-orange-400">
+                exceptional user experiences
+              </span>
+              .
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
               <a
@@ -900,7 +979,9 @@ function App() {
                           </div>
                           <div className="flex items-center gap-2">
                             <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                            <span className="text-gray-400">{skill.experience}</span>
+                            <span className="text-gray-400">
+                              {skill.experience}
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -1249,7 +1330,7 @@ function App() {
                       className="fill-none stroke-orange-500/30"
                       strokeWidth="2"
                     />
-                    
+
                     {/* Animated circle stroke */}
                     <circle
                       cx="50"
@@ -1306,9 +1387,11 @@ function App() {
                   </svg>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-xl font-bold bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 
+                  <span
+                    className="text-xl font-bold bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 
                                   bg-clip-text text-transparent animate-gradient bg-300% group-hover:bg-orange-400 
-                                  transition-colors">
+                                  transition-colors"
+                  >
                     Jatin Verma
                   </span>
                   <span className="text-xs text-gray-400 group-hover:text-orange-400 transition-colors">
@@ -1317,7 +1400,8 @@ function App() {
                 </div>
               </div>
               <p className="text-gray-400 leading-relaxed">
-                Crafting digital experiences with modern web technologies and creative solutions.
+                Crafting digital experiences with modern web technologies and
+                creative solutions.
               </p>
               <div className="flex space-x-4">
                 <a
