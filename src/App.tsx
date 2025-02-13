@@ -8,6 +8,7 @@ import { Timeline } from "./components/Timeline";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import Scene3D from "./components/Scene3D";
 import { motion } from "framer-motion";
+import Loader from "./components/Loader";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,6 +62,8 @@ function App() {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     // Use requestAnimationFrame for smooth performance
@@ -146,6 +149,15 @@ function App() {
       });
     }
   }, [factsInView]);
+
+  useEffect(() => {
+    // Simulate loading time and hide loader
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Adjust time as needed
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const skills = [
     {
@@ -404,6 +416,10 @@ function App() {
 
   // Memoize components that don't need frequent updates
   const MemoizedScene3D = React.memo(Scene3D);
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <div className="bg-[#0a0a0a] text-gray-200">
