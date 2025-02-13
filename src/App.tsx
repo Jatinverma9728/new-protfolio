@@ -54,41 +54,58 @@ function App() {
     error: null as string | null
   });
 
+  // Add state for mobile menu
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Add toggle function for mobile menu
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const cards = document.querySelectorAll('.spotlight-card');
-    
-    cards.forEach((card) => {
-      const rect = (card as HTMLElement).getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const color = (card as HTMLElement).dataset.color || '#ff6b00';
+    // Use requestAnimationFrame for smooth performance
+    requestAnimationFrame(() => {
+      const cards = document.querySelectorAll('.spotlight-card');
       
-      (card as HTMLElement).style.setProperty('--mouse-x', `${x}px`);
-      (card as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
-      (card as HTMLElement).style.setProperty('--card-color', color);
+      cards.forEach((card) => {
+        const rect = (card as HTMLElement).getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const color = (card as HTMLElement).dataset.color || '#ff6b00';
+        
+        (card as HTMLElement).style.setProperty('--mouse-x', `${x}px`);
+        (card as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
+        (card as HTMLElement).style.setProperty('--card-color', color);
+      });
     });
   };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(headerRef.current, {
-        y: -100,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out"
-      });
-
-      gsap.utils.toArray('.fade-in').forEach((element: any) => {
-        gsap.from(element, {
-          scrollTrigger: {
-            trigger: element,
-            start: "top center+=100",
-            toggleActions: "play none none reverse"
-          },
-          opacity: 0,
-          y: 50,
+      // Batch animations for better performance
+      const tl = gsap.timeline({
+        defaults: {
           duration: 1,
           ease: "power3.out"
+        }
+      });
+
+      tl.from(headerRef.current, {
+        y: -100,
+        opacity: 0,
+      });
+
+      // Batch process fade-in animations
+      const fadeElements = gsap.utils.toArray('.fade-in');
+      fadeElements.forEach((element: any) => {
+        ScrollTrigger.create({
+          trigger: element,
+          start: "top center+=100",
+          toggleActions: "play none none reverse",
+          animation: gsap.from(element, {
+            opacity: 0,
+            y: 50,
+          })
         });
       });
 
@@ -135,73 +152,81 @@ function App() {
       name: "React",
       image:
         "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg",
-      level: "95%",
+      level: "80%",
       color: "#61DAFB",
       category: "Frontend",
+      experience: "6 months",
     },
     {
       name: "Node.js",
       image:
         "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg",
-      level: "90%",
+      level: "60%",
       color: "#68A063",
       category: "Backend",
+      experience: "3 months",
     },
     {
       name: "MongoDB",
       image:
         "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg",
-      level: "85%",
+      level: "70%",
       color: "#4DB33D",
       category: "Backend",
+      experience: "3 months",
     },
     {
       name: "TypeScript",
       image:
         "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg",
-      level: "90%",
+      level: "80%",
       color: "#3178C6",
       category: "Language",
+      experience: "7 months",
     },
     // {
-      // name: "Next.js",
-      // image:
-        // "https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg",
-      // level: "85%",
-      // color: "#000000",
-      // category: "Frontend",
+    // name: "Next.js",
+    // image:
+    // "https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg",
+    // level: "85%",
+    // color: "#000000",
+    // category: "Frontend",
     // },
     {
       name: "Tailwind",
       image:
         "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg",
-      level: "95%",
+      level: "85%",
       color: "#38B2AC",
       category: "Frontend",
+      experience: "2+ years",
     },
     {
       name: "C++",
       image:
         "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg",
-      level: "85%",
+      level: "50%",
       color: "#00599C",
       category: "Language",
+      experience: "6 months",
     },
     {
       name: "C",
       image:
         "https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg",
-      level: "80%",
+      level: "60%",
       color: "#A8B9CC",
       category: "Language",
+      experience: "1 year",
     },
     {
       name: "JavaScript",
       image:
         "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
-      level: "95%",
+      level: "75%",
       color: "#F7DF1E",
       category: "Language",
+      experience: "2 years",
     },
   ];
 
@@ -209,8 +234,7 @@ function App() {
     {
       title: "Paramprik Swad E-commerce",
       description: "Full-stack MERN application with real-time updates",
-      image:
-        "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      image: "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=70",
       tags: ["TypeScript", "TailwindCSS", "Ai Chatbot", "React"],
       liveUrl: "https://paramprkswad.vercel.app/",
       githubUrl: "https://github.com/Jatinverma9728/new-paramprikswad",
@@ -377,91 +401,200 @@ function App() {
     }
   ];
 
+  // Memoize components that don't need frequent updates
+  const MemoizedScene3D = React.memo(Scene3D);
+
   return (
     <div className="bg-[#0a0a0a] text-gray-200">
       <ScrollToTopButton />
       {/* Header */}
       <header
         ref={headerRef}
-        className="fixed top-0 w-full bg-black/30 backdrop-blur-md z-50 border-b border-orange-500/20"
+        className="fixed top-0 w-full bg-black/30 backdrop-blur-md z-50 border-b border-orange-500/20 
+                   rounded-b-2xl shadow-lg shadow-orange-500/5"
       >
-        <nav className="container mx-auto px-6 py-4">
+        <nav className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <h1 className="text-2xl font-bold animate-gradient">Portfolio</h1>
-            <div className="space-x-8">
-              <a
-                href="#about"
-                className="hover:text-orange-500 transition-colors"
-              >
-                About
-              </a>
-              <a
-                href="#experience"
-                className="hover:text-orange-500 transition-colors"
-              >
-                Experience
-              </a>
-              <a
-                href="#skills"
-                className="hover:text-orange-500 transition-colors"
-              >
-                Skills
-              </a>
-              <a
-                href="#projects"
-                className="hover:text-orange-500 transition-colors"
-              >
-                Projects
-              </a>
-              <a
-                href="#contact"
-                className="hover:text-orange-500 transition-colors"
-              >
-                Contact
-              </a>
+            <a 
+              href="#" 
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="group flex items-center gap-3 hover:scale-105 transition-all duration-300"
+            >
+              <div className="relative w-10 h-10">
+                <svg
+                  viewBox="0 0 100 100"
+                  className="w-full h-full transform group-hover:rotate-12 transition-transform duration-300"
+                >
+                  {/* Outer Circle with gradient */}
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    className="fill-none stroke-orange-500/30"
+                    strokeWidth="2"
+                  />
+                  
+                  {/* Animated circle stroke */}
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    className="fill-none stroke-orange-500"
+                    strokeWidth="2"
+                    strokeDasharray="283"
+                    strokeDashoffset="283"
+                    style={{
+                      animation: "circle-animation 2s ease-out forwards",
+                    }}
+                  />
+
+                  {/* J letter */}
+                  <path
+                    d="M35 25v35c0 8 6 15 15 15s15-7 15-15"
+                    className="fill-none stroke-white"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    style={{
+                      animation: "draw-letter 1s ease-out forwards",
+                    }}
+                  />
+
+                  {/* V letter overlay */}
+                  <path
+                    d="M40 25l10 35 10-35"
+                    className="fill-none stroke-orange-500"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    style={{
+                      animation: "draw-letter 1s ease-out 0.5s forwards",
+                      opacity: 0.8,
+                    }}
+                  />
+
+                  {/* Decorative dots */}
+                  <circle
+                    cx="30"
+                    cy="50"
+                    r="3"
+                    className="fill-orange-500 animate-pulse"
+                  />
+                  <circle
+                    cx="70"
+                    cy="50"
+                    r="3"
+                    className="fill-orange-500 animate-pulse"
+                    style={{ animationDelay: "0.5s" }}
+                  />
+                </svg>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 
+                                bg-clip-text text-transparent animate-gradient bg-300% group-hover:bg-orange-400 
+                                transition-colors">
+                  Jatin Verma
+                </span>
+                <span className="text-xs text-gray-400 group-hover:text-orange-400 transition-colors">
+                  Full Stack Developer
+                </span>
+              </div>
+            </a>
+            
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden p-2 text-gray-400 hover:text-orange-500 transition-colors"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle menu"
+            >
+              <div className="w-6 h-5 relative flex flex-col justify-between">
+                <span className={`w-full h-0.5 bg-current transform transition-all duration-300 ease-in-out ${
+                  isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
+                }`} />
+                <span className={`w-full h-0.5 bg-current transition-all duration-300 ease-in-out ${
+                  isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
+                }`} />
+                <span className={`w-full h-0.5 bg-current transform transition-all duration-300 ease-in-out ${
+                  isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
+                }`} />
+              </div>
+            </button>
+
+            {/* Desktop Menu */}
+            <div className="hidden md:flex space-x-8">
+              <a href="#about" className="hover:text-orange-500 transition-colors">About</a>
+              <a href="#experience" className="hover:text-orange-500 transition-colors">Experience</a>
+              <a href="#skills" className="hover:text-orange-500 transition-colors">Skills</a>
+              <a href="#projects" className="hover:text-orange-500 transition-colors">Projects</a>
+              <a href="#contact" className="hover:text-orange-500 transition-colors">Contact</a>
+            </div>
+          </div>
+
+          {/* Mobile Menu - Updated with rounded corners */}
+          <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'} pt-4 
+                          border-t border-orange-500/20 mt-4 rounded-b-xl 
+                          bg-black/30 backdrop-blur-md`}>
+            <div className="flex flex-col space-y-4 px-2 pb-4">
+              <a href="#about" className="hover:text-orange-500 transition-colors px-3 py-2 rounded-lg hover:bg-orange-500/10" onClick={() => setIsMobileMenuOpen(false)}>About</a>
+              <a href="#experience" className="hover:text-orange-500 transition-colors px-3 py-2 rounded-lg hover:bg-orange-500/10" onClick={() => setIsMobileMenuOpen(false)}>Experience</a>
+              <a href="#skills" className="hover:text-orange-500 transition-colors px-3 py-2 rounded-lg hover:bg-orange-500/10" onClick={() => setIsMobileMenuOpen(false)}>Skills</a>
+              <a href="#projects" className="hover:text-orange-500 transition-colors px-3 py-2 rounded-lg hover:bg-orange-500/10" onClick={() => setIsMobileMenuOpen(false)}>Projects</a>
+              <a href="#contact" className="hover:text-orange-500 transition-colors px-3 py-2 rounded-lg hover:bg-orange-500/10" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
             </div>
           </div>
         </nav>
       </header>
 
-      {/* Hero Section */}
+      {/* Hero Section - Updated for better responsiveness */}
       <section className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Scene3D />
+          <MemoizedScene3D />
         </div>
-        <div className="container mx-auto px-6 py-20 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 py-20 relative z-10">
           <div className="text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-8">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 sm:mb-8">
               <TypewriterText />
             </h1>
-            <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto animate-float">
-              Jatin Verma is a BCA final-year student and a skilled full-stack
-              developer with 1+ year of experience in web development.
-              Proficient in React, TypeScript, JavaScript, and UI/UX design, he
-              has built projects like Paramparik Swad and an AI-powered chatbot.
-              Passionate about software engineering, he excels in building
-              scalable, user-centric applications.
+            <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed 
+              drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+              I'm a <span className="text-orange-400">BCA final-year student</span> and 
+              <span className="text-orange-400"> full-stack developer</span> with expertise in 
+              <span className="text-orange-400"> React</span>, 
+              <span className="text-orange-400"> TypeScript</span>, and 
+              <span className="text-orange-400"> UI/UX design</span>. 
+              Passionate about creating <span className="text-orange-400">scalable web applications</span> and 
+              delivering <span className="text-orange-400">exceptional user experiences</span>.
             </p>
-            <div className="flex justify-center space-x-6">
+            <div className="flex justify-center gap-4 flex-wrap">
               <a
                 href="#contact"
-                className="bg-orange-500 text-white px-8 py-3 rounded-full hover:bg-orange-600 transition-all transform hover:scale-105 duration-300 glow"
+                className="bg-orange-500 text-white px-6 py-2.5 rounded-full hover:bg-orange-600 
+                          transition-all transform hover:scale-105 duration-300 glow text-sm 
+                          min-w-[140px] text-center"
               >
                 Get in touch
               </a>
               <a
                 href="#projects"
-                className="border-2 border-orange-500 text-orange-400 px-8 py-3 rounded-full hover:bg-orange-500/10 transition-all transform hover:scale-105 duration-300"
+                className="border-2 border-orange-500 text-orange-400 px-6 py-2.5 rounded-full 
+                          hover:bg-orange-500/10 transition-all transform hover:scale-105 
+                          duration-300 text-sm min-w-[140px] text-center"
               >
                 View Projects
               </a>
               <a
                 href="/path-to-your-resume.pdf"
                 download="Jatin_Verma_Resume.pdf"
-                className="flex items-center gap-2 bg-gray-800/50 text-white px-8 py-3 rounded-full hover:bg-gray-800 transition-all transform hover:scale-105 duration-300 border border-orange-500/20"
+                className="flex items-center justify-center gap-2 bg-gray-800/50 text-white 
+                          px-6 py-2.5 rounded-full hover:bg-gray-800 transition-all transform 
+                          hover:scale-105 duration-300 border border-orange-500/20 text-sm
+                          min-w-[140px]"
               >
                 <svg
-                  className="w-5 h-5"
+                  className="w-4 h-4"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -767,7 +900,7 @@ function App() {
                           </div>
                           <div className="flex items-center gap-2">
                             <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                            <span className="text-gray-400">3+ Years</span>
+                            <span className="text-gray-400">{skill.experience}</span>
                           </div>
                         </div>
                       </div>
@@ -805,12 +938,9 @@ function App() {
                     delay: index * 0.2,
                     ease: [0.4, 0, 0.2, 1],
                   }}
+                  className={`group transform transition-all duration-500 hover:scale-[1.02]`}
                 >
-                  <div
-                    className={`project-card group ${
-                      index === 1 ? "center-card" : ""
-                    }`}
-                  >
+                  <div className="project-card h-full">
                     {/* Project Image Container */}
                     <div className="relative overflow-hidden rounded-t-xl h-64">
                       <div
@@ -847,7 +977,7 @@ function App() {
 
                     {/* Project Info */}
                     <div
-                      className="relative bg-gray-900/50 backdrop-blur-sm p-6 rounded-b-xl border border-t-0 
+                      className="relative bg-gray-900/50 backdrop-blur-sm p-6 rounded-b-xl border border-t-0 h-full
                                  group-hover:bg-gray-800/50 transition-colors duration-500"
                       style={{ borderColor: `${project.color}33` }}
                     >
@@ -1105,18 +1235,89 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {/* Brand Section */}
             <div className="space-y-6">
-              <div className="flex items-center space-x-3">
-                <img src="/jv-logo.svg" alt="JV Logo" className="w-10 h-10" />
-                <h3
-                  className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-orange-600 
-                              bg-clip-text text-transparent"
-                >
-                  Jatin Verma
-                </h3>
+              <div className="flex items-center gap-3">
+                <div className="relative w-10 h-10">
+                  <svg
+                    viewBox="0 0 100 100"
+                    className="w-full h-full transform group-hover:rotate-12 transition-transform duration-300"
+                  >
+                    {/* Outer Circle with gradient */}
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      className="fill-none stroke-orange-500/30"
+                      strokeWidth="2"
+                    />
+                    
+                    {/* Animated circle stroke */}
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      className="fill-none stroke-orange-500"
+                      strokeWidth="2"
+                      strokeDasharray="283"
+                      strokeDashoffset="283"
+                      style={{
+                        animation: "circle-animation 2s ease-out forwards",
+                      }}
+                    />
+
+                    {/* J letter */}
+                    <path
+                      d="M35 25v35c0 8 6 15 15 15s15-7 15-15"
+                      className="fill-none stroke-white"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      style={{
+                        animation: "draw-letter 1s ease-out forwards",
+                      }}
+                    />
+
+                    {/* V letter overlay */}
+                    <path
+                      d="M40 25l10 35 10-35"
+                      className="fill-none stroke-orange-500"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      style={{
+                        animation: "draw-letter 1s ease-out 0.5s forwards",
+                        opacity: 0.8,
+                      }}
+                    />
+
+                    {/* Decorative dots */}
+                    <circle
+                      cx="30"
+                      cy="50"
+                      r="3"
+                      className="fill-orange-500 animate-pulse"
+                    />
+                    <circle
+                      cx="70"
+                      cy="50"
+                      r="3"
+                      className="fill-orange-500 animate-pulse"
+                      style={{ animationDelay: "0.5s" }}
+                    />
+                  </svg>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-xl font-bold bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 
+                                  bg-clip-text text-transparent animate-gradient bg-300% group-hover:bg-orange-400 
+                                  transition-colors">
+                    Jatin Verma
+                  </span>
+                  <span className="text-xs text-gray-400 group-hover:text-orange-400 transition-colors">
+                    Full Stack Developer
+                  </span>
+                </div>
               </div>
               <p className="text-gray-400 leading-relaxed">
-                Crafting digital experiences with modern web technologies and
-                creative solutions.
+                Crafting digital experiences with modern web technologies and creative solutions.
               </p>
               <div className="flex space-x-4">
                 <a
