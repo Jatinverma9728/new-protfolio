@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useInView } from "react-intersection-observer";
 import TypewriterText from "./components/TypewriterText";
-import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
+import { Github, Linkedin, Mail, ExternalLink, X } from "lucide-react";
 import { Timeline } from "./components/Timeline";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import Scene3D from "./components/Scene3D";
@@ -1405,24 +1405,36 @@ function App() {
               </p>
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/Jatinverma9728"
                   className="social-icon-link"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="GitHub Profile"
                 >
                   <Github className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/jatinverma9728/"
                   className="social-icon-link"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="LinkedIn Profile"
                 >
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
-                  href="mailto:your.email@example.com"
+                  href="https://twitter.com/YourTwitterHandle"
                   className="social-icon-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="X (Twitter) Profile"
+                >
+                  <X className="w-5 h-5" />
+                </a>
+                <a
+                  href="mailto:vermajatin447@gmail.com"
+                  className="social-icon-link"
+                  aria-label="Email Contact"
                 >
                   <Mail className="w-5 h-5" />
                 </a>
