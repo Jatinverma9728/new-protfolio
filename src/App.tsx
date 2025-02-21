@@ -681,7 +681,7 @@ function App() {
                 View Projects
               </a>
               <a
-                href="\public\assets\resume/resume.pdf"
+                href="https://drive.google.com/file/d/1YPC1Nk5zlS5wAiWxg1SAMvTGYVxzPLnJ/view?usp=drive_link"
                 download="Jatin_Verma_Resume.pdf"
                 className="flex items-center justify-center gap-2 bg-gray-800/50 text-white 
                           px-6 py-2.5 rounded-full hover:bg-gray-800 transition-all transform 
