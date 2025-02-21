@@ -1,0 +1,13 @@
+{
+  "headers": [
+    {
+      "source": "/assets/resume/(.*)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/pdf"
+        }
+      ]
+    }
+  ]
+}
