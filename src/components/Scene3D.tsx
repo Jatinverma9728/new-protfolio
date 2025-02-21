@@ -1,6 +1,10 @@
-import Spline from "@splinetool/react-spline";
+import { Suspense, lazy } from "react";
+import { memo } from "react";
 
-export default function Scene3D() {
+// Lazy load the Spline component
+const LazySpline = lazy(() => import("@splinetool/react-spline"));
+
+const Scene3D = memo(() => {
   return (
     <div
       style={{
@@ -12,13 +16,21 @@ export default function Scene3D() {
         pointerEvents: "none",
       }}
     >
-      <Spline
-        scene="https://prod.spline.design/PEUuCFu8IXVsg67H/scene.splinecode"
-        style={{
-          width: "100%",
-          height: "100%",
-        }}
-      />
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazySpline
+          scene="https://prod.spline.design/PEUuCFu8IXVsg67H/scene.splinecode"
+          style={{
+            width: "100%",
+            height: "100%",
+            willChange: "transform", // Optimize GPU rendering
+            transform: "translateZ(0)", // Force GPU acceleration
+          }}
+        />
+      </Suspense>
     </div>
   );
-}
+});
+
+Scene3D.displayName = "Scene3D";
+
+export default Scene3D;
