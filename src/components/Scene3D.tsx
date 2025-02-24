@@ -18,7 +18,7 @@ const Scene3D = memo(() => {
     >
       <Suspense fallback={<div>Loading...</div>}>
         <LazySpline
-          scene="https://prod.spline.design/PEUuCFu8IXVsg67H/scene.splinecode"
+          scene="https://prod.spline.design/FdCkav61e7Zyz90s/scene.splinecode"
           style={{
             width: "100%",
             height: "100%",
