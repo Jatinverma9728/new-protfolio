@@ -1439,15 +1439,6 @@ function App() {
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://twitter.com/YourTwitterHandle"
-                  className="social-icon-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="X (Twitter) Profile"
-                >
-                  <X className="w-5 h-5" />
-                </a>
-                <a
                   href="mailto:vermajatin447@gmail.com"
                   className="social-icon-link"
                   aria-label="Email Contact"
