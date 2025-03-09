@@ -184,9 +184,9 @@
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    400px circle at var(--mouse-x) var(--mouse-y),
-    rgba(255, 126, 0, 0.1),
-    transparent 40%
+    200px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 145, 0, 0.1),
+    transparent 60%
   );
   opacity: 0;
   transition: opacity 0.2s;

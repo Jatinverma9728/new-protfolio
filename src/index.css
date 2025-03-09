@@ -145,7 +145,7 @@ body {
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    800px circle at var(--mouse-x) var(--mouse-y),
+    200px circle at var(--mouse-x) var(--mouse-y),
     color-mix(in srgb, var(--card-color) 8%, transparent),
     transparent 50%
   );
@@ -162,9 +162,9 @@ body {
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    600px circle at var(--mouse-x) var(--mouse-y),
+    400px circle at var(--mouse-x) var(--mouse-y),
     color-mix(in srgb, var(--card-color) 15%, transparent),
-    transparent 50%
+    transparent 60%
   );
   opacity: 0;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);

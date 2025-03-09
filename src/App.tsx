@@ -196,14 +196,15 @@ function App() {
       category: "Language",
       experience: "7 months",
     },
-    // {
-    // name: "Next.js",
-    // image:
-    // "https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg",
-    // level: "85%",
-    // color: "#000000",
-    // category: "Frontend",
-    // },
+    {
+      name: "Next.js",
+      image:
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg",
+      level: "40%",
+      color: "#ffff",
+      category: "Frontend",
+      experience: "1 months",
+    },
     {
       name: "Tailwind",
       image:
@@ -445,16 +446,16 @@ function App() {
                   viewBox="0 0 100 100"
                   className="w-full h-full transform group-hover:rotate-12 transition-transform duration-300"
                 >
-                  {/* Outer Circle with gradient */}
+                  {/* Outer Circle with gradient
                   <circle
                     cx="50"
                     cy="50"
                     r="45"
                     className="fill-none stroke-orange-500/30"
                     strokeWidth="2"
-                  />
+                  /> */}
 
-                  {/* Animated circle stroke */}
+                  {/* Animated circle stroke
                   <circle
                     cx="50"
                     cy="50"
@@ -466,7 +467,7 @@ function App() {
                     style={{
                       animation: "circle-animation 2s ease-out forwards",
                     }}
-                  />
+                  /> */}
 
                   {/* J letter */}
                   <path
@@ -494,7 +495,7 @@ function App() {
                   />
 
                   {/* Decorative dots */}
-                  <circle
+                  {/* <circle
                     cx="30"
                     cy="50"
                     r="3"
@@ -506,7 +507,7 @@ function App() {
                     r="3"
                     className="fill-orange-500 animate-pulse"
                     style={{ animationDelay: "0.5s" }}
-                  />
+                  /> */}
                 </svg>
               </div>
               <div className="flex flex-col">
@@ -788,14 +789,14 @@ function App() {
                         <div className="text-4xl font-bold text-orange-500 mb-2">
                           {counts.projects}+
                         </div>
-                        <div className="text-gray-400">Projects Completed</div>
+                        <div className="text-gray-400">Projects</div>
                       </div>
-                      <div className="text-center">
+                      {/* <div className="text-center">
                         <div className="text-4xl font-bold text-orange-500 mb-2">
                           {counts.clients}+
                         </div>
                         <div className="text-gray-400">Happy Clients</div>
-                      </div>
+                      </div> */}
                       <div className="text-center">
                         <div className="text-4xl font-bold text-orange-500 mb-2">
                           {counts.technologies}+
@@ -1009,10 +1010,10 @@ function App() {
         </div>
 
         {/* Background decoration */}
-        <div className="absolute inset-0 -z-10 opacity-30">
+        {/* <div className="absolute inset-0 -z-10 opacity-30">
           <div className="absolute top-0 left-0 w-96 h-96 bg-orange-500/20 rounded-full filter blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full filter blur-3xl"></div>
-        </div>
+        </div> */}
       </section>
 
       {/* Projects Section */}
@@ -1620,11 +1621,11 @@ function App() {
 
           {/* Bottom Bar */}
           <div className="mt-16 pt-8 border-t border-gray-800">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
               <p className="text-gray-400 text-sm">
                 © {new Date().getFullYear()} Jatin Verma. All rights reserved.
               </p>
-              <div className="flex space-x-6 text-sm text-gray-400">
+              {/* <div className="flex space-x-6 text-sm text-gray-400">
                 <a href="#" className="hover:text-orange-400 transition-colors">
                   Privacy Policy
                 </a>
@@ -1634,7 +1635,7 @@ function App() {
                 <a href="#" className="hover:text-orange-400 transition-colors">
                   Cookie Policy
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

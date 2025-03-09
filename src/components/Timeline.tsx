@@ -110,6 +110,12 @@ export const Timeline = () => {
       date: "June 24 - Present",
       position: 'left' as const,
     },
+    {
+      title: "Internship",
+      company: "Small Fare",
+      date: "March 25 - Present",
+      position: 'right' as const,
+    },
   ];
 
   // Add mouse move handler
@@ -147,7 +153,7 @@ export const Timeline = () => {
             width: '5px',
             transform: 'translateX(-2px)',
             boxShadow: `
-              0 0 10px #3b82f6,
+              0 0 10px rgb(43, 122, 248),
               0 0 20px #3b82f6,
               0 0 30px #3b82f6,
               0 0 40px #3b82f6
