@@ -1,4 +1,4 @@
-import Typewriter from 'typewriter-effect';
+import Typewriter from "typewriter-effect";
 
 const TypewriterText = () => {
   return (
@@ -8,12 +8,16 @@ const TypewriterText = () => {
       <span className="text-orange-500">Verma</span>
       <Typewriter
         options={{
-          strings: ['Creative Developer', 'UI/UX Designer', 'Full Stack Developer'],
+          strings: [
+            "Creative Developer",
+            "UI/UX Designer",
+            "Full Stack Developer",
+          ],
           autoStart: true,
           loop: true,
           delay: 50,
           deleteSpeed: 30,
-          cursor: '|',
+          cursor: "|",
         }}
       />
     </div>
