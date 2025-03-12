@@ -101,7 +101,7 @@ body {
 }
 
 .skill-card::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -158,7 +158,7 @@ body {
 }
 
 .spotlight-card::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: radial-gradient(
@@ -258,7 +258,7 @@ body {
 
 /* Shimmer Effect */
 .project-card::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -300,14 +300,9 @@ body {
 
 .center-card::before,
 .center-card::after {
-  content: '';
+  content: "";
   position: absolute;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #4ade80,
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, #4ade80, transparent);
   width: 120%;
   height: 2px;
   left: -10%;
@@ -370,7 +365,7 @@ body {
 }
 
 .contact-link::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -421,7 +416,11 @@ body {
   font-size: 0.875rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
-  background: linear-gradient(180deg, transparent 50%, rgba(17, 24, 39, 0.8) 50%);
+  background: linear-gradient(
+    180deg,
+    transparent 50%,
+    rgba(17, 24, 39, 0.8) 50%
+  );
 }
 
 .form-group input:focus ~ label,
@@ -430,7 +429,11 @@ body {
 .form-group textarea:not(:placeholder-shown) ~ label {
   transform: translateY(-1.4rem) scale(0.85);
   color: rgb(249, 115, 22);
-  background: linear-gradient(180deg, rgba(17, 24, 39, 0.8) 50%, transparent 50%);
+  background: linear-gradient(
+    180deg,
+    rgba(17, 24, 39, 0.8) 50%,
+    transparent 50%
+  );
 }
 
 .form-group input:focus,
@@ -470,7 +473,7 @@ body {
 }
 
 .form-group button:after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -525,7 +528,7 @@ body {
 }
 
 .footer-link::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 1px;
