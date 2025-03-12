@@ -3,14 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/jv-logo.svg" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jatin Verma | Full Stack Developer</title>
+    <style>
+      .cursor-dot {
+  width: 5px;
+  height: 5px;
+  background-color: rgb(255, 255, 255);
+}
+.cousor-outline {
+  width: 20px;
+  height: 20px;
+  background-color: #f97316;
+  /* border: 3px solid #ff004f; */
+}
+.cursor-dot,
+.cousor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+    </style>
   </head>
   <body>
     <div id="root"></div>
+    <!-- ---animated cursor--- -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cousor-outline" data-cursor-outline></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- canimated cursor script -->
+    <script>
+     const cursordot = document.querySelector("[data-cursor-dot]");
+const cursorOutline = document.querySelector("[data-cursor-outline]");
+
+window.addEventListener("mousemove", function (e) {
+  const posX = e.clientX;
+  const posY = e.clientY;
+  cursordot.style.left = `${posX}px`;
+  cursordot.style.top = `${posY}px`;
+  cursorOutline.animate(
+    {
+      left: `${posX}px`,
+      top: `${posY}px`,
+    },
+    { duration: 500, fill: "forwards" }
+  );
+});
+    </script>
   </body>
 </html>
