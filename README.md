@@ -17,7 +17,7 @@ git clone {repositry name}
 ## Usage
 
 ```sh
-cd new-protfolio
+cd new-portfolio
 ```
 
 ## Run tests
