@@ -128,28 +128,19 @@
   0% {
     opacity: 0.8;
     filter: blur(3px);
-    box-shadow: 
-      0 0 10px #3b82f6,
-      0 0 20px #3b82f6,
-      0 0 30px #3b82f6,
+    box-shadow: 0 0 10px #3b82f6, 0 0 20px #3b82f6, 0 0 30px #3b82f6,
       0 0 40px #3b82f6;
   }
   50% {
     opacity: 1;
     filter: blur(4px);
-    box-shadow: 
-      0 0 15px #3b82f6,
-      0 0 30px #3b82f6,
-      0 0 45px #3b82f6,
+    box-shadow: 0 0 15px #3b82f6, 0 0 30px #3b82f6, 0 0 45px #3b82f6,
       0 0 60px #3b82f6;
   }
   100% {
     opacity: 0.8;
     filter: blur(3px);
-    box-shadow: 
-      0 0 10px #3b82f6,
-      0 0 20px #3b82f6,
-      0 0 30px #3b82f6,
+    box-shadow: 0 0 10px #3b82f6, 0 0 20px #3b82f6, 0 0 30px #3b82f6,
       0 0 40px #3b82f6;
   }
 }
@@ -180,7 +171,7 @@
 }
 
 .timeline-card::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: radial-gradient(
@@ -195,4 +186,4 @@
 
 .timeline-card:hover::before {
   opacity: 1;
-} 
+}
