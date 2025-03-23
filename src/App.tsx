@@ -682,7 +682,7 @@ function App() {
                 View Projects
               </a>
               <a
-                href="https://drive.google.com/file/d/14RwfiXRx4axBQ5EQMhAXpXPCbLD1dHWZ/view?usp=sharing"
+                href="https://drive.google.com/file/d/1pOaOM2LjcIGZGjlxOWsWeDmeNpzZ_7PW/view?usp=drive_link"
                 download="Jatin_Verma_Resume.pdf"
                 className="flex items-center justify-center gap-2 bg-gray-800/50 text-white 
                           px-6 py-2.5 rounded-full hover:bg-gray-800 transition-all transform 
