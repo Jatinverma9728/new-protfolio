@@ -428,7 +428,7 @@ function App() {
       {/* Header */}
       <header
         ref={headerRef}
-        className="fixed top-0 w-full bg-black/30 backdrop-blur-md z-50 border-b border-orange-500/20 
+        className="fixed top-0 w-full bg-black/10 backdrop-blur-md z-50 border-b border-orange-500/20 
                    rounded-b-2xl shadow-lg shadow-orange-500/5"
       >
         <nav className="container mx-auto px-4 py-4">
@@ -446,30 +446,6 @@ function App() {
                   viewBox="0 0 100 100"
                   className="w-full h-full transform group-hover:rotate-12 transition-transform duration-300"
                 >
-                  {/* Outer Circle with gradient
-                  <circle
-                    cx="50"
-                    cy="50"
-                    r="45"
-                    className="fill-none stroke-orange-500/30"
-                    strokeWidth="2"
-                  /> */}
-
-                  {/* Animated circle stroke
-                  <circle
-                    cx="50"
-                    cy="50"
-                    r="45"
-                    className="fill-none stroke-orange-500"
-                    strokeWidth="2"
-                    strokeDasharray="283"
-                    strokeDashoffset="283"
-                    style={{
-                      animation: "circle-animation 2s ease-out forwards",
-                    }}
-                  /> */}
-
-                  {/* J letter */}
                   <path
                     d="M35 25v35c0 8 6 15 15 15s15-7 15-15"
                     className="fill-none stroke-white"
@@ -480,8 +456,6 @@ function App() {
                       animation: "draw-letter 1s ease-out forwards",
                     }}
                   />
-
-                  {/* V letter overlay */}
                   <path
                     d="M40 25l10 35 10-35"
                     className="fill-none stroke-orange-500"
@@ -493,21 +467,6 @@ function App() {
                       opacity: 0.8,
                     }}
                   />
-
-                  {/* Decorative dots */}
-                  {/* <circle
-                    cx="30"
-                    cy="50"
-                    r="3"
-                    className="fill-orange-500 animate-pulse"
-                  />
-                  <circle
-                    cx="70"
-                    cy="50"
-                    r="3"
-                    className="fill-orange-500 animate-pulse"
-                    style={{ animationDelay: "0.5s" }}
-                  /> */}
                 </svg>
               </div>
               <div className="flex flex-col">
@@ -524,114 +483,84 @@ function App() {
               </div>
             </a>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - Enhanced */}
             <button
-              className="md:hidden p-2 text-gray-400 hover:text-orange-500 transition-colors"
+              className="md:hidden relative w-10 h-10 bg-gradient-to-br from-orange-500/10 to-transparent 
+                        rounded-lg backdrop-blur-sm border border-orange-500/20 hover:border-orange-500/40 
+                        transition-all duration-300"
               onClick={toggleMobileMenu}
               aria-label="Toggle menu"
             >
-              <div className="w-6 h-5 relative flex flex-col justify-between">
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5">
                 <span
-                  className={`w-full h-0.5 bg-current transform transition-all duration-300 ease-in-out ${
-                    isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
-                  }`}
+                  className={`w-5 h-0.5 bg-gray-300 transform transition-all duration-300 ease-out
+                            ${isMobileMenuOpen ? "rotate-45 translate-y-1.5" : ""}`}
                 />
                 <span
-                  className={`w-full h-0.5 bg-current transition-all duration-300 ease-in-out ${
-                    isMobileMenuOpen ? "opacity-0" : "opacity-100"
-                  }`}
+                  className={`w-5 h-0.5 bg-gray-300 transition-all duration-300 ease-out
+                            ${isMobileMenuOpen ? "opacity-0" : ""}`}
                 />
                 <span
-                  className={`w-full h-0.5 bg-current transform transition-all duration-300 ease-in-out ${
-                    isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
-                  }`}
+                  className={`w-5 h-0.5 bg-gray-300 transform transition-all duration-300 ease-out
+                            ${isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""}`}
                 />
               </div>
             </button>
 
-            {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-8">
-              <a
-                href="#about"
-                className="hover:text-orange-500 transition-colors"
-              >
-                About
-              </a>
-              <a
-                href="#experience"
-                className="hover:text-orange-500 transition-colors"
-              >
-                Experience
-              </a>
-              <a
-                href="#skills"
-                className="hover:text-orange-500 transition-colors"
-              >
-                Skills
-              </a>
-              <a
-                href="#projects"
-                className="hover:text-orange-500 transition-colors"
-              >
-                Projects
-              </a>
-              <a
-                href="#contact"
-                className="hover:text-orange-500 transition-colors"
-              >
-                Contact
-              </a>
+            {/* Desktop Menu - Enhanced */}
+            <div className="hidden md:flex items-center space-x-1">
+              {["About", "Experience", "Skills", "Projects", "Contact"].map(
+                (item) => (
+                  <a
+                    key={item}
+                    href={`#${item.toLowerCase()}`}
+                    className="relative px-4 py-2 group"
+                  >
+                    <span className="relative z-10 text-gray-300 group-hover:text-white transition-colors duration-300">
+                      {item}
+                    </span>
+                    <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-orange-500/20 to-transparent 
+                                 rounded-lg -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-orange-500 
+                                 group-hover:w-full transition-all duration-300" />
+                  </a>
+                )
+              )}
             </div>
           </div>
 
-          {/* Mobile Menu - Updated with rounded corners */}
+          {/* Mobile Menu - Enhanced */}
           <div
-            className={`md:hidden ${isMobileMenuOpen ? "block" : "hidden"} pt-4 
-                          border-t border-orange-500/20 mt-4 rounded-b-xl 
-                          bg-black/30 backdrop-blur-md`}
+            className={`md:hidden fixed inset-x-4 top-20 p-4 rounded-lg bg-black/80 backdrop-blur-xl
+                       border border-orange-500/20 shadow-xl shadow-orange-500/5 transition-all duration-300 ease-out
+                       ${
+                         isMobileMenuOpen
+                           ? "opacity-100 translate-y-0"
+                           : "opacity-0 -translate-y-4 pointer-events-none"
+                       }`}
           >
-            <div className="flex flex-col space-y-4 px-2 pb-4">
-              <a
-                href="#about"
-                className="hover:text-orange-500 transition-colors px-3 py-2 rounded-lg hover:bg-orange-500/10"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About
-              </a>
-              <a
-                href="#experience"
-                className="hover:text-orange-500 transition-colors px-3 py-2 rounded-lg hover:bg-orange-500/10"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Experience
-              </a>
-              <a
-                href="#skills"
-                className="hover:text-orange-500 transition-colors px-3 py-2 rounded-lg hover:bg-orange-500/10"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Skills
-              </a>
-              <a
-                href="#projects"
-                className="hover:text-orange-500 transition-colors px-3 py-2 rounded-lg hover:bg-orange-500/10"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Projects
-              </a>
-              <a
-                href="#contact"
-                className="hover:text-orange-500 transition-colors px-3 py-2 rounded-lg hover:bg-orange-500/10"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact
-              </a>
+            <div className="flex flex-col space-y-2">
+              {["About", "Experience", "Skills", "Projects", "Contact"].map(
+                (item) => (
+                  <a
+                    key={item}
+                    href={`#${item.toLowerCase()}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="px-4 py-3 rounded-lg hover:bg-orange-500/10 text-gray-300 hover:text-white
+                           transition-all duration-300 relative group"
+                  >
+                    <span className="relative z-10">{item}</span>
+                    <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r 
+                                 from-orange-500/10 to-transparent transition-all duration-300 rounded-lg" />
+                  </a>
+                )
+              )}
             </div>
           </div>
         </nav>
       </header>
 
-      {/* Hero Section - Updated for better responsiveness */}
+      {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <MemoizedScene3D />
@@ -791,12 +720,6 @@ function App() {
                         </div>
                         <div className="text-gray-400">Projects</div>
                       </div>
-                      {/* <div className="text-center">
-                        <div className="text-4xl font-bold text-orange-500 mb-2">
-                          {counts.clients}+
-                        </div>
-                        <div className="text-gray-400">Happy Clients</div>
-                      </div> */}
                       <div className="text-center">
                         <div className="text-4xl font-bold text-orange-500 mb-2">
                           {counts.technologies}+
@@ -818,7 +741,6 @@ function App() {
                         { icon: "💡", text: "Innovation First" },
                         { icon: "🎯", text: "Pixel Perfect Design" },
                         { icon: "⚡", text: "Performance Driven" },
-                        // { icon: "🤝", text: "Client Satisfaction" },
                       ].map((value, index) => (
                         <li
                           key={index}
@@ -841,7 +763,6 @@ function App() {
                     <div className="flex flex-wrap gap-3">
                       {[
                         "AI Integration",
-                        // "Web3",
                         "Performance",
                         "Accessibility",
                         "Mobile First",
@@ -1008,12 +929,6 @@ function App() {
             </div>
           </div>
         </div>
-
-        {/* Background decoration */}
-        {/* <div className="absolute inset-0 -z-10 opacity-30">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-orange-500/20 rounded-full filter blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full filter blur-3xl"></div>
-        </div> */}
       </section>
 
       {/* Projects Section */}
@@ -1339,7 +1254,6 @@ function App() {
                     viewBox="0 0 100 100"
                     className="w-full h-full transform group-hover:rotate-12 transition-transform duration-300"
                   >
-                    {/* Outer Circle with gradient */}
                     <circle
                       cx="50"
                       cy="50"
@@ -1347,8 +1261,6 @@ function App() {
                       className="fill-none stroke-orange-500/30"
                       strokeWidth="2"
                     />
-
-                    {/* Animated circle stroke */}
                     <circle
                       cx="50"
                       cy="50"
@@ -1361,8 +1273,6 @@ function App() {
                         animation: "circle-animation 2s ease-out forwards",
                       }}
                     />
-
-                    {/* J letter */}
                     <path
                       d="M35 25v35c0 8 6 15 15 15s15-7 15-15"
                       className="fill-none stroke-white"
@@ -1373,8 +1283,6 @@ function App() {
                         animation: "draw-letter 1s ease-out forwards",
                       }}
                     />
-
-                    {/* V letter overlay */}
                     <path
                       d="M40 25l10 35 10-35"
                       className="fill-none stroke-orange-500"
@@ -1386,8 +1294,6 @@ function App() {
                         opacity: 0.8,
                       }}
                     />
-
-                    {/* Decorative dots */}
                     <circle
                       cx="30"
                       cy="50"
@@ -1625,26 +1531,9 @@ function App() {
               <p className="text-gray-400 text-sm">
                 © {new Date().getFullYear()} Jatin Verma. All rights reserved.
               </p>
-              {/* <div className="flex space-x-6 text-sm text-gray-400">
-                <a href="#" className="hover:text-orange-400 transition-colors">
-                  Privacy Policy
-                </a>
-                <a href="#" className="hover:text-orange-400 transition-colors">
-                  Terms of Service
-                </a>
-                <a href="#" className="hover:text-orange-400 transition-colors">
-                  Cookie Policy
-                </a>
-              </div> */}
             </div>
           </div>
         </div>
-
-        {/* Background Elements */}
-        {/* <div className="absolute inset-0 -z-10 opacity-30">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/20 rounded-full filter blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/20 rounded-full filter blur-3xl"></div>
-        </div> */}
       </footer>
 
       {/* Success Message Popup */}

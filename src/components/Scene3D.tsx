@@ -17,7 +17,7 @@ const Scene3D = memo(() => {
       }}
     >
       <img
-        src="/public/line-v-2.gif" // Path to your GIF in the public folder
+        src="/line-v-2.gif" // Path to your GIF in the public folder
         alt="Background GIF"
         style={{
           width: "100%",
