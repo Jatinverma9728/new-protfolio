@@ -16,17 +16,15 @@ const Scene3D = memo(() => {
         pointerEvents: "none",
       }}
     >
-      <Suspense fallback={<div>Loading...</div>}>
-        <LazySpline
-          scene="https://prod.spline.design/FdCkav61e7Zyz90s/scene.splinecode"
-          style={{
-            width: "100%",
-            height: "100%",
-            willChange: "transform", // Optimize GPU rendering
-            transform: "translateZ(0)", // Force GPU acceleration
-          }}
-        />
-      </Suspense>
+      <img
+        src="/public/line-v-2.gif" // Path to your GIF in the public folder
+        alt="Background GIF"
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover", // Ensure the GIF covers the entire area
+        }}
+      />
     </div>
   );
 });
