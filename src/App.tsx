@@ -194,7 +194,7 @@ function App() {
       level: "70%",
       color: "#3e6e93",
       category: "Databse",
-      experience: "3 months",
+      experience: "1 months",
     },
     {
       name: "Express Js",
