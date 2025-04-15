@@ -184,6 +184,24 @@ function App() {
         "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg",
       level: "70%",
       color: "#4DB33D",
+      category: "Databse",
+      experience: "3 months",
+    },
+    {
+      name: "MySQL",
+      image:
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-plain-wordmark.svg",
+      level: "70%",
+      color: "#3e6e93",
+      category: "Databse",
+      experience: "3 months",
+    },
+    {
+      name: "Express Js",
+      image:
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg",
+      level: "60%",
+      color: "#ff0000",
       category: "Backend",
       experience: "3 months",
     },
@@ -810,7 +828,7 @@ function App() {
 
             {/* Category Filters */}
             <div className="flex justify-center gap-4 mb-12">
-              {["All", "Frontend", "Backend", "Language"].map((category) => (
+              {["All", "Frontend", "Backend","Databse", "Language"].map((category) => (
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
