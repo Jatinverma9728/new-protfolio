@@ -512,7 +512,11 @@ function App() {
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5">
                 <span
                   className={`w-5 h-0.5 bg-gray-300 transform transition-all duration-300 ease-out
-                            ${isMobileMenuOpen ? "rotate-45 translate-y-1.5" : ""}`}
+                            ${
+                              isMobileMenuOpen
+                                ? "rotate-45 translate-y-1.5"
+                                : ""
+                            }`}
                 />
                 <span
                   className={`w-5 h-0.5 bg-gray-300 transition-all duration-300 ease-out
@@ -520,7 +524,11 @@ function App() {
                 />
                 <span
                   className={`w-5 h-0.5 bg-gray-300 transform transition-all duration-300 ease-out
-                            ${isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""}`}
+                            ${
+                              isMobileMenuOpen
+                                ? "-rotate-45 -translate-y-1.5"
+                                : ""
+                            }`}
                 />
               </div>
             </button>
@@ -537,10 +545,14 @@ function App() {
                     <span className="relative z-10 text-gray-300 group-hover:text-white transition-colors duration-300">
                       {item}
                     </span>
-                    <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-orange-500/20 to-transparent 
-                                 rounded-lg -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-orange-500 
-                                 group-hover:w-full transition-all duration-300" />
+                    <span
+                      className="absolute inset-0 w-full h-full bg-gradient-to-br from-orange-500/20 to-transparent 
+                                 rounded-lg -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    />
+                    <span
+                      className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-orange-500 
+                                 group-hover:w-full transition-all duration-300"
+                    />
                   </a>
                 )
               )}
@@ -568,8 +580,10 @@ function App() {
                            transition-all duration-300 relative group"
                   >
                     <span className="relative z-10">{item}</span>
-                    <span className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r 
-                                 from-orange-500/10 to-transparent transition-all duration-300 rounded-lg" />
+                    <span
+                      className="absolute inset-0 w-0 group-hover:w-full bg-gradient-to-r 
+                                 from-orange-500/10 to-transparent transition-all duration-300 rounded-lg"
+                    />
                   </a>
                 )
               )}
@@ -629,7 +643,7 @@ function App() {
                 View Projects
               </a>
               <a
-                href="https://drive.google.com/file/d/1pOaOM2LjcIGZGjlxOWsWeDmeNpzZ_7PW/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1-etEPuL8-Lw6DJAbvmOlroB2ZkjbmRR6/view?usp=sharing"
                 download="Jatin_Verma_Resume.pdf"
                 className="flex items-center justify-center gap-2 bg-gray-800/50 text-white 
                           px-6 py-2.5 rounded-full hover:bg-gray-800 transition-all transform 
@@ -828,20 +842,22 @@ function App() {
 
             {/* Category Filters */}
             <div className="flex justify-center gap-4 mb-12">
-              {["All", "Frontend", "Backend","Databse", "Language"].map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-6 py-2 rounded-full text-sm font-medium transition-all
+              {["All", "Frontend", "Backend", "Databse", "Language"].map(
+                (category) => (
+                  <button
+                    key={category}
+                    onClick={() => setSelectedCategory(category)}
+                    className={`px-6 py-2 rounded-full text-sm font-medium transition-all
                            ${
                              selectedCategory === category
                                ? "bg-orange-500 text-white"
                                : "bg-gray-800/50 text-gray-300 hover:bg-orange-500/20"
                            }`}
-                >
-                  {category}
-                </button>
-              ))}
+                  >
+                    {category}
+                  </button>
+                )
+              )}
             </div>
 
             {/* Skills Grid */}
