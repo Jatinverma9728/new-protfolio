@@ -268,8 +268,8 @@ function App() {
       image:
         "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=70",
       tags: ["TypeScript", "TailwindCSS", "Ai Chatbot", "React"],
-      liveUrl: "https://paramprkswad.vercel.app/",
-      githubUrl: "https://github.com/Jatinverma9728/new-paramprikswad",
+      liveUrl: "https://paramprikswad.vercel.app/",
+      githubUrl: "https://github.com/Jatinverma9728/paramprik-swad.git",
       color: "#61DAFB",
     },
     {
@@ -280,7 +280,7 @@ function App() {
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       tags: ["JavaScript", " Typed.js", "TailwindCSS", "GSAP"],
       liveUrl: "https://one-place-one.vercel.app/index.html",
-      githubUrl: "https://github.com/Jatinverma9728/one-place",
+      githubUrl: "https://github.com/Jatinverma9728/one-place.git",
       color: "#000000",
     },
     {
