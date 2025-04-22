@@ -289,8 +289,8 @@ function App() {
       image:
         "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       tags: ["React", "GSAP", "Three.js", "Framer Motion"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://jatinverma.vercel.app/",
+      githubUrl: "https://github.com/Jatinverma9728/new-protfolio.git",
       color: "#FF4A4A",
     },
   ];
