@@ -27,6 +27,17 @@ body {
   @apply bg-blue-700;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-x: hidden; /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 /* Gradient text animation */
 .animate-gradient {
   background: linear-gradient(to right, #ff6b00, #ff9900, #ff6b00);

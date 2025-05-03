@@ -841,13 +841,13 @@ function App() {
             </h2>
 
             {/* Category Filters */}
-            <div className="flex justify-center gap-4 mb-12">
+            <div className="flex justify-start md:justify-center gap-4 mb-12 overflow-x-auto pb-4 px-2 -mx-2 md:overflow-x-hidden md:pb-0 md:px-0 md:-mx-0 hide-scrollbar">
               {["All", "Frontend", "Backend", "Databse", "Language"].map(
                 (category) => (
                   <button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`px-6 py-2 rounded-full text-sm font-medium transition-all
+                    className={`px-6 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap
                            ${
                              selectedCategory === category
                                ? "bg-orange-500 text-white"
