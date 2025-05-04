@@ -211,7 +211,7 @@ function App() {
         "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg",
       level: "60%",
       color: "#ff0000",
-      category: "Frontend",
+      category: "Backend",
       experience: "3 months",
     },
     {
