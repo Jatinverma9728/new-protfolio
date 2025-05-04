@@ -170,6 +170,15 @@ function App() {
       experience: "6 months",
     },
     {
+      name: "Python",
+      image:
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg",
+      level: "75%",
+      color: "#ffe05d",
+      category: "Language",
+      experience: "2 Months",
+    },
+    {
       name: "Node.js",
       image:
         "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg",
@@ -202,7 +211,7 @@ function App() {
         "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg",
       level: "60%",
       color: "#ff0000",
-      category: "Backend",
+      category: "Frontend",
       experience: "3 months",
     },
     {
