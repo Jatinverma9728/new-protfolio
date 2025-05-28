@@ -275,7 +275,7 @@ function App() {
       title: "Paramprik Swad E-commerce",
       description: "Full-stack MERN application with real-time updates",
       image:
-        "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=70",
+        "https://www.reshot.com/preview-assets/illustrations/HW724VTQ8D/shopping-data-analysis-HW724VTQ8D-w600.jpg",
       tags: ["TypeScript", "TailwindCSS", "Ai Chatbot", "React"],
       liveUrl: "https://paramprikswad.vercel.app/",
       githubUrl: "https://github.com/Jatinverma9728/paramprik-swad.git",
@@ -286,7 +286,7 @@ function App() {
       description:
         "OnePlace is an ecommerce website offering various home services and products.",
       image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "https://d3jlwjv6gmyigl.cloudfront.net/images/2020/02/Delivery.jpg",
       tags: ["JavaScript", " Typed.js", "TailwindCSS", "GSAP"],
       liveUrl: "https://one-place-one.vercel.app/index.html",
       githubUrl: "https://github.com/Jatinverma9728/one-place.git",
@@ -296,9 +296,19 @@ function App() {
       title: "Portfolio Website",
       description: "Modern portfolio website with GSAP animations",
       image:
-        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "https://i.pinimg.com/736x/bc/c9/3c/bcc93cbc1ce46e687f4e61fef7340206.jpg",
       tags: ["React", "GSAP", "Three.js", "Framer Motion"],
       liveUrl: "https://jatinverma.vercel.app/",
+      githubUrl: "https://github.com/Jatinverma9728/new-protfolio.git",
+      color: "#FF4A4A",
+    },
+    {
+      title: "SkillSwap",
+      description: "Modern looking website with GSAP animations",
+      image:
+        "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      tags: ["React", "GSAP", "Three.js", "Framer Motion"],
+      liveUrl: "https://skill-swip.vercel.app/",
       githubUrl: "https://github.com/Jatinverma9728/new-protfolio.git",
       color: "#FF4A4A",
     },
