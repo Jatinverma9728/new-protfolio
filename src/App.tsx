@@ -273,10 +273,20 @@ function App() {
   const projects = [
     {
       title: "Paramprik Swad E-commerce",
-      description: "Full-stack MERN application with real-time updates",
+      description: "A full-stack e-commerce application built with the MERN stack.",
       image:
         "https://www.reshot.com/preview-assets/illustrations/HW724VTQ8D/shopping-data-analysis-HW724VTQ8D-w600.jpg",
-      tags: ["TypeScript", "TailwindCSS", "Ai Chatbot", "React"],
+      tags: [
+        "React",
+        "MongoDB",
+        "Express",
+        "Node.Js",
+        "TypeScript",
+        "JavaScript",
+        "TailwindCSS",
+        "Framer Motion",
+        "Redux",
+      ],
       liveUrl: "https://paramprikswad.vercel.app/",
       githubUrl: "https://github.com/Jatinverma9728/paramprik-swad.git",
       color: "#61DAFB",
@@ -294,7 +304,8 @@ function App() {
     },
     {
       title: "Portfolio Website",
-      description: "Modern portfolio website with GSAP animations",
+      description:
+        "A modern portfolio website showcasing my skills and projects with smooth animations and responsive design.",
       image:
         "https://i.pinimg.com/736x/bc/c9/3c/bcc93cbc1ce46e687f4e61fef7340206.jpg",
       tags: ["React", "GSAP", "Three.js", "Framer Motion"],
@@ -303,14 +314,26 @@ function App() {
       color: "#FF4A4A",
     },
     {
-      title: "SkillSwap",
-      description: "Modern looking website with GSAP animations",
+      title: "Premium-Construction",
+      description:
+        "Premium Construction is a modern, responsive website showcasing a fictional construction company with a focus on clean design and smooth animations.",
       image:
-        "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      tags: ["React", "GSAP", "Three.js", "Framer Motion"],
-      liveUrl: "https://skill-swip.vercel.app/",
-      githubUrl: "https://github.com/Jatinverma9728/new-protfolio.git",
-      color: "#FF4A4A",
+        "https://i.pinimg.com/736x/b1/eb/7e/b1eb7ec6c594fceb0ca71a5449252a93.jpg",
+      tags: ["Next.js", "GSAP", "TailwindCSS", "Framer Motion", "TypeScript"],
+      liveUrl: "https://premium-construction-1.vercel.app/",
+      githubUrl: "https://github.com/Jatinverma9728/premium-construction-1",
+      color: "#FF0000",
+    },
+    {
+      title: "Averiq",
+      description:
+        "Averiq is a modern, responsive website showcasing a fictional tech company website with a focus on clean design and smooth animations.",
+      image:
+        "https://i.pinimg.com/736x/76/d6/31/76d631d86b984e363bda1781f433d6cb.jpg",
+      tags: ["React", "GSAP", "Tailwind CSS", "Framer Motion", "formspree"],
+      liveUrl: "https://averiq.vercel.app/",
+      githubUrl: "https://github.com/Jatinverma9728/averiq-original.git",
+      color: "#22c55e",
     },
   ];
 
