@@ -29,6 +29,7 @@ npm install   and then npm run dev
 
 ## Author
 
+
 👤 **Jatin Verma**
 
 - Website: https://vrma-portfolio.vercel.app/
