@@ -32,7 +32,7 @@ npm install   and then npm run dev
 
 👤 **Jatin Verma**
 
-- Website: https://vrma-portfolio.vercel.app/
+- Website: https://jatinverma.vercel.app/
 - Github: [@https:\/\/github.com\/dashboard](https://github.com/https://github.com/dashboard)
 - LinkedIn: [@https:\/\/www.linkedin.com\/in\/jatinverma9728\/](https://linkedin.com/in/https://www.linkedin.com/in/jatinverma9728/)
 
