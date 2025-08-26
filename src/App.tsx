@@ -273,7 +273,8 @@ function App() {
   const projects = [
     {
       title: "Paramprik Swad E-commerce",
-      description: "A full-stack e-commerce application built with the MERN stack.",
+      description:
+        "A full-stack e-commerce application built with the MERN stack.",
       image:
         "https://www.reshot.com/preview-assets/illustrations/HW724VTQ8D/shopping-data-analysis-HW724VTQ8D-w600.jpg",
       tags: [
@@ -292,15 +293,15 @@ function App() {
       color: "#61DAFB",
     },
     {
-      title: "One Place E-commerce",
+      title: "Premium-Construction",
       description:
-        "OnePlace is an ecommerce website offering various home services and products.",
+        "Premium Construction is a modern, responsive website showcasing a fictional construction company with a focus on clean design and smooth animations.",
       image:
-        "https://d3jlwjv6gmyigl.cloudfront.net/images/2020/02/Delivery.jpg",
-      tags: ["JavaScript", " Typed.js", "TailwindCSS", "GSAP"],
-      liveUrl: "https://one-place-one.vercel.app/index.html",
-      githubUrl: "https://github.com/Jatinverma9728/one-place.git",
-      color: "#000000",
+        "https://i.pinimg.com/736x/b1/eb/7e/b1eb7ec6c594fceb0ca71a5449252a93.jpg",
+      tags: ["Next.js", "GSAP", "TailwindCSS", "Framer Motion", "TypeScript"],
+      liveUrl: "https://premium-construction-1.vercel.app/",
+      githubUrl: "https://github.com/Jatinverma9728/premium-construction-1",
+      color: "#FF0000",
     },
     {
       title: "Portfolio Website",
@@ -314,15 +315,16 @@ function App() {
       color: "#FF4A4A",
     },
     {
-      title: "Premium-Construction",
+      title: "Chawla Architects",
       description:
-        "Premium Construction is a modern, responsive website showcasing a fictional construction company with a focus on clean design and smooth animations.",
+        "A modern portfolio website showcasing the architectural projects of Chawla Architects with smooth animations and responsive design.",
       image:
-        "https://i.pinimg.com/736x/b1/eb/7e/b1eb7ec6c594fceb0ca71a5449252a93.jpg",
-      tags: ["Next.js", "GSAP", "TailwindCSS", "Framer Motion", "TypeScript"],
-      liveUrl: "https://premium-construction-1.vercel.app/",
-      githubUrl: "https://github.com/Jatinverma9728/premium-construction-1",
-      color: "#FF0000",
+        "https://img.freepik.com/free-vector/creative-office-workers-illustration_33099-2336.jpg?t=st=1756223160~exp=1756226760~hmac=7cff0adb49c3cc994dee3444d42843c58d35f63aa28f80d8b44416d13c81268d&w=1480",
+      tags: ["Next.js", "TailwindCSS", "TypeScript", "Framer Motion"],
+      liveUrl: "https://jatinverma.vercel.app/",
+      githubUrl:
+        "https://github.com/Jatinverma9728/Chawala-Arc-website-project-new-new",
+      color: "#411717ff",
     },
     {
       title: "Averiq",
@@ -334,6 +336,17 @@ function App() {
       liveUrl: "https://averiq.vercel.app/",
       githubUrl: "https://github.com/Jatinverma9728/averiq-original.git",
       color: "#22c55e",
+    },
+    {
+      title: "One Place E-commerce",
+      description:
+        "OnePlace is an ecommerce website offering various home services and products.",
+      image:
+        "https://d3jlwjv6gmyigl.cloudfront.net/images/2020/02/Delivery.jpg",
+      tags: ["JavaScript", " Typed.js", "TailwindCSS", "GSAP"],
+      liveUrl: "https://one-place-one.vercel.app/index.html",
+      githubUrl: "https://github.com/Jatinverma9728/one-place.git",
+      color: "#000000",
     },
   ];
 
