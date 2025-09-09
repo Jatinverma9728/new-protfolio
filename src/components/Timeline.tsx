@@ -27,18 +27,16 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   return (
     <div
       ref={ref}
-      className={`flex items-center ${
-        position === "left" ? "flex-row-reverse" : "flex-row"
-      } w-full mb-8`}
+      className={`flex items-center ${position === "left" ? "flex-row-reverse" : "flex-row"
+        } w-full mb-8`}
     >
       <div
-        className={`w-5/12 ${
-          inView
+        className={`w-5/12 ${inView
             ? position === "left"
               ? "animate-slide-left"
               : "animate-slide-right"
             : "opacity-0"
-        }`}
+          }`}
       >
         <div className="bg-orange-500 p-6 rounded-lg shadow-xl transform hover:scale-105 transition-all duration-300">
           <h3 className="text-xl font-bold mb-2">{title}</h3>

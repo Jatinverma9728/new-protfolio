@@ -586,11 +586,10 @@ function App() {
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5">
                 <span
                   className={`w-5 h-0.5 bg-gray-300 transform transition-all duration-300 ease-out
-                            ${
-                              isMobileMenuOpen
-                                ? "rotate-45 translate-y-1.5"
-                                : ""
-                            }`}
+                            ${isMobileMenuOpen
+                      ? "rotate-45 translate-y-1.5"
+                      : ""
+                    }`}
                 />
                 <span
                   className={`w-5 h-0.5 bg-gray-300 transition-all duration-300 ease-out
@@ -598,11 +597,10 @@ function App() {
                 />
                 <span
                   className={`w-5 h-0.5 bg-gray-300 transform transition-all duration-300 ease-out
-                            ${
-                              isMobileMenuOpen
-                                ? "-rotate-45 -translate-y-1.5"
-                                : ""
-                            }`}
+                            ${isMobileMenuOpen
+                      ? "-rotate-45 -translate-y-1.5"
+                      : ""
+                    }`}
                 />
               </div>
             </button>
@@ -637,11 +635,10 @@ function App() {
           <div
             className={`md:hidden fixed inset-x-4 top-20 p-4 rounded-lg bg-black/80 backdrop-blur-xl
                        border border-orange-500/20 shadow-xl shadow-orange-500/5 transition-all duration-300 ease-out
-                       ${
-                         isMobileMenuOpen
-                           ? "opacity-100 translate-y-0"
-                           : "opacity-0 -translate-y-4 pointer-events-none"
-                       }`}
+                       ${isMobileMenuOpen
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 -translate-y-4 pointer-events-none"
+              }`}
           >
             <div className="flex flex-col space-y-2">
               {["About", "Experience", "Skills", "Projects", "Contact"].map(
@@ -922,11 +919,10 @@ function App() {
                     key={category}
                     onClick={() => setSelectedCategory(category)}
                     className={`px-6 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap
-                           ${
-                             selectedCategory === category
-                               ? "bg-orange-500 text-white"
-                               : "bg-gray-800/50 text-gray-300 hover:bg-orange-500/20"
-                           }`}
+                           ${selectedCategory === category
+                        ? "bg-orange-500 text-white"
+                        : "bg-gray-800/50 text-gray-300 hover:bg-orange-500/20"
+                      }`}
                   >
                     {category}
                   </button>
@@ -1555,11 +1551,10 @@ function App() {
                     }
                     className={`w-full bg-gray-800/50 border rounded-lg px-4 py-2 
                                focus:outline-none transition-colors
-                               ${
-                                 newsletter.error
-                                   ? "border-red-500 focus:border-red-500"
-                                   : "border-gray-700 focus:border-orange-500"
-                               }`}
+                               ${newsletter.error
+                        ? "border-red-500 focus:border-red-500"
+                        : "border-gray-700 focus:border-orange-500"
+                      }`}
                   />
                   <button
                     type="submit"
@@ -1646,9 +1641,8 @@ function App() {
 
       {/* Success Message Popup */}
       <div
-        className={`fixed bottom-4 right-4 transform transition-all duration-500 ${
-          showSuccess ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-        }`}
+        className={`fixed bottom-4 right-4 transform transition-all duration-500 ${showSuccess ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+          }`}
       >
         <div className="bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg flex items-center gap-3">
           <svg
