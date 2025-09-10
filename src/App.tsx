@@ -272,7 +272,7 @@ function App() {
 
   const projects = [
     {
-      title: "Paramprik Swad E-commerce",
+      title: "Desi Company",
       description:
         "A full-stack e-commerce application built with the MERN stack.",
       image:
