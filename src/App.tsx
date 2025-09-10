@@ -241,24 +241,24 @@ function App() {
       category: "Frontend",
       experience: "2+ years",
     },
-    {
-      name: "C++",
-      image:
-        "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg",
-      level: "50%",
-      color: "#00599C",
-      category: "Language",
-      experience: "6 months",
-    },
-    {
-      name: "C",
-      image:
-        "https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg",
-      level: "60%",
-      color: "#A8B9CC",
-      category: "Language",
-      experience: "1 year",
-    },
+    // {
+    //   name: "C++",
+    //   image:
+    //     "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg",
+    //   level: "50%",
+    //   color: "#00599C",
+    //   category: "Language",
+    //   experience: "6 months",
+    // },
+    // {
+    //   name: "C",
+    //   image:
+    //     "https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg",
+    //   level: "60%",
+    //   color: "#A8B9CC",
+    //   category: "Language",
+    //   experience: "1 year",
+    // },
     {
       name: "JavaScript",
       image:
