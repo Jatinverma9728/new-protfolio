@@ -6,7 +6,7 @@
   </a>
 </p>
 
-> A modern, responsive portfolio website showcasing my expertise as a Full Stack Developer, built with React, TypeScript, and TailwindCSS. The site features an interactive 3D background created with Spline, smooth GSAP animations, and a clean, professional design. Key sections include an animated hero section with a typewriter effect, an about section highlighting my journey and skills, an interactive experience timeline, a comprehensive skills showcase with filterable categories, and a portfolio section displaying my featured projects. The website incorporates advanced features such as GPU-accelerated animations, lazy loading for optimal performance, and a fully functional contact form with Formspree integration. The design emphasizes user experience with a dark theme, glassmorphism effects, and responsive layouts that work seamlessly across all devices. Notable projects showcased include Paramprik Swad E-commerce, One Place E-commerce, and this portfolio website itself, demonstrating my proficiency in modern web technologies including React, TypeScript, GSAP, Framer Motion, and TailwindCSS.
+> A modern, responsive portfolio website showcasing my expertise as a Full Stack Developer, built with React, TypeScript, and TailwindCSS. The site features an interactive 3D background created with Spline, smooth GSAP animations, and a clean, professional design. Key sections include an animated hero section with a typewriter effect, an about section highlighting my journey and skills, an interactive experience timeline, a comprehensive skills showcase with filterable categories, and a portfolio section displaying my featured projects. The website incorporates advanced features such as GPU-accelerated animations, lazy loading for optimal performance, and a fully functional contact form with Formspree integration. The design emphasizes user experience with a dark theme, glassmorphism effects, and responsive layouts that work seamlessly across all devices. Notable projects showcased include Paramprik Swad E-commerce, One Place E-commerce, and this portfolio website itself, demonstrating my proficiency in modern web technologies, including React, TypeScript, GSAP, Framer Motion, and TailwindCSS.
 
 ## Install
 
@@ -27,6 +27,7 @@ npm install   and then npm run dev
 ```
 
 ## Author
+
 
 👤 **Jatin Verma**
 
