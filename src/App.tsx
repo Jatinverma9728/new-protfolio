@@ -9,6 +9,7 @@ import ScrollToTopButton from "./components/ScrollToTopButton";
 import Scene3D from "./components/Scene3D";
 import { motion } from "framer-motion";
 import Loader from "./components/Loader";
+import GradualBlur from './components/GradualBlur';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -1661,7 +1662,18 @@ function App() {
           <span>Message sent successfully!</span>
         </div>
       </div>
+      <GradualBlur
+        target="page"  // This makes it stick to the viewport
+        position="bottom"
+        height="6rem"
+        strength={2}
+        divCount={5}
+        curve="bezier"
+        exponential={true}
+        opacity={1}
+      />
     </div>
+
   );
 }
 
