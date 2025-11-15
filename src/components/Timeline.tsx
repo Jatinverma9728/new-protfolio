@@ -127,9 +127,9 @@ export const Timeline = () => {
       position: "left" as const,
     },
     {
-      title: "Internship",
-      company: "Small Fare",
-      date: "March 25 - Present",
+      title: "Internship - Team Lead Frontend",
+      company: "SmallFare",
+      date: "March 25 - June 25",
       position: "right" as const,
     },
   ];
