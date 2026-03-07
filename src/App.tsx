@@ -168,7 +168,7 @@ function App() {
       level: "80%",
       color: "#61DAFB",
       category: "Frontend",
-      experience: "6 months",
+      experience: "2+ years",
     },
     {
       name: "Python",
@@ -177,7 +177,7 @@ function App() {
       level: "75%",
       color: "#ffe05d",
       category: "Language",
-      experience: "2 Months",
+      experience: "1+ years",
     },
     {
       name: "Node.js",
@@ -186,25 +186,7 @@ function App() {
       level: "60%",
       color: "#68A063",
       category: "Backend",
-      experience: "3 months",
-    },
-    {
-      name: "MongoDB",
-      image:
-        "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg",
-      level: "70%",
-      color: "#4DB33D",
-      category: "Databse",
-      experience: "3 months",
-    },
-    {
-      name: "MySQL",
-      image:
-        "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-plain-wordmark.svg",
-      level: "70%",
-      color: "#3e6e93",
-      category: "Databse",
-      experience: "1 months",
+      experience: "2+ years",
     },
     {
       name: "Express Js",
@@ -213,7 +195,7 @@ function App() {
       level: "60%",
       color: "#ff0000",
       category: "Backend",
-      experience: "3 months",
+      experience: "2+ years",
     },
     {
       name: "TypeScript",
@@ -222,16 +204,16 @@ function App() {
       level: "80%",
       color: "#3178C6",
       category: "Language",
-      experience: "7 months",
+      experience: "2+ years",
     },
     {
       name: "Next.js",
       image:
         "https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg",
-      level: "40%",
+      level: "70%",
       color: "#ffff",
       category: "Frontend",
-      experience: "1 months",
+      experience: "1.5+ years",
     },
     {
       name: "Tailwind",
@@ -242,24 +224,6 @@ function App() {
       category: "Frontend",
       experience: "2+ years",
     },
-    // {
-    //   name: "C++",
-    //   image:
-    //     "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg",
-    //   level: "50%",
-    //   color: "#00599C",
-    //   category: "Language",
-    //   experience: "6 months",
-    // },
-    // {
-    //   name: "C",
-    //   image:
-    //     "https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg",
-    //   level: "60%",
-    //   color: "#A8B9CC",
-    //   category: "Language",
-    //   experience: "1 year",
-    // },
     {
       name: "JavaScript",
       image:
@@ -267,15 +231,148 @@ function App() {
       level: "75%",
       color: "#F7DF1E",
       category: "Language",
-      experience: "2 years",
+      experience: "2.5+ years",
+    },
+     {
+      name: "MongoDB",
+      image:
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg",
+      level: "70%",
+      color: "#4DB33D",
+      category: "Database",
+      experience: "1.5+ years",
+    },
+    {
+      name: "MySQL",
+      image:
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-plain-wordmark.svg",
+      level: "70%",
+      color: "#3e6e93",
+      category: "Database",
+      experience: "1.5+ years",
+    },
+    {
+      name: "Redis",
+      image:
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original.svg",
+      level: "55%",
+      color: "#D84940",
+      category: "Database",
+      experience: "6+ months",
+    },
+    {
+      name: "Firebase",
+      image:
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg",
+      level: "65%",
+      color: "#FF9900",
+      category: "Database",
+      experience: "1+ years",
+    },
+    {
+      name: "Aws",
+      image:
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+      level: "65%",
+      color: "#FF9900",
+      category: "Cloud",
+      experience: "6+ months",
+    },
+    {
+      name: "Github",
+      image:
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg",
+      level: "75%",
+      color: "#181717",
+      category: "Tools",
+      experience: "2+ years",
+    },
+    {
+      name: "Git",
+      image:
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg",
+      level: "75%",
+      color: "#F05032",
+      category: "Tools",
+      experience: "2+ years",
+    },
+    {
+      name: "Docker",
+      image:
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg",
+      level: "60%",
+      color: "#2496ED",
+      category: "DevOps",
+      experience: "1+ years",
+    },
+    {
+      name: "Kubernetes",
+      image:
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/kubernetes/kubernetes-plain.svg",
+      level: "50%",
+      color: "#326CE5",
+      category: "DevOps",
+      experience: "6+ months",
+    },
+    {
+      name: "Jenkins",
+      image:
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/jenkins/jenkins-original.svg",
+      level: "50%",
+      color: "#D84940",
+      category: "DevOps",
+      experience: "6+ months",
+    },
+    {
+      name: "Gitlab",
+      image:
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/gitlab/gitlab-original.svg",
+      level: "50%",
+      color: "#D84940",
+      category: "DevOps",
+      experience: "6+ months",
+    },
+    {
+      name: "Terraform",
+      image:
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/terraform/terraform-original.svg",
+      level: "50%",
+      color: "#7B42BC",
+      category: "DevOps",
+      experience: "6+ months",
     },
   ];
 
   const projects = [
     {
-      title: "Desi Company",
+      title: "North Tech Hub",
       description:
-        "A full-stack e-commerce application built with the MERN stack.",
+        "A Modern Sclable and Robhust E-commerece Website and a online Course Platform with online payment integration and a user friendly interface.",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN4YkEF7aed7Q_hWnTanK3RKjtHtUvOn_jBw&s",
+      tags: [
+        "Next.js",
+        "MongoDB",
+        "Express",
+        "Node.Js",
+        "TypeScript",
+        "JavaScript",
+        "TailwindCSS",
+        "Framer Motion",
+        "Redux",
+        "Razorpay",
+        "Cloudinary",
+        "JWT",
+        "Render"
+      ],
+      liveUrl: "https://northtechhub.in/",
+      githubUrl: "https://github.com/Jatinverma9728/sunil-sir-project.git",
+      color: "#ff0000",
+    },
+    {
+      title: "Acharam",
+      description:
+        "A full stack e-commerce website for a fictional store called Acharam, built with React, Node.js, Express, MongoDB, and Tailwind CSS. It features user authentication, product browsing, shopping cart functionality, and a responsive design.",
       image:
         "https://www.reshot.com/preview-assets/illustrations/HW724VTQ8D/shopping-data-analysis-HW724VTQ8D-w600.jpg",
       tags: [
@@ -289,8 +386,8 @@ function App() {
         "Framer Motion",
         "Redux",
       ],
-      liveUrl: "https://paramprikswad.vercel.app/",
-      githubUrl: "https://github.com/Jatinverma9728/paramprik-swad.git",
+      liveUrl: "https://acharam.vercel.app/",
+      githubUrl: "https://github.com/Jatinverma9728/goldy-achram.git",
       color: "#61DAFB",
     },
     {
@@ -317,11 +414,22 @@ function App() {
       description:
         "A modern portfolio website showcasing my skills and projects with smooth animations and responsive design.",
       image:
-        "https://i.pinimg.com/736x/bc/c9/3c/bcc93cbc1ce46e687f4e61fef7340206.jpg",
+        "https://mir-s3-cdn-cf.behance.net/projects/404/587ff4235471139.Y3JvcCwzOTAxLDMwNTEsOTY1LDUxMQ.jpg",
       tags: ["React", "GSAP", "Three.js", "Framer Motion"],
-      liveUrl: "https://jatinverma.vercel.app/",
+      liveUrl: "https://devjatin.in/",
       githubUrl: "https://github.com/Jatinverma9728/new-protfolio.git",
       color: "#FF4A4A",
+    },
+    {
+      title: "Portfolio Website Client",
+      description:
+        "A modern portfolio website showcasing the skills and projects of a client with smooth animations and responsive design.",
+      image:
+        "https://i.pinimg.com/736x/bc/c9/3c/bcc93cbc1ce46e687f4e61fef7340206.jpg",
+      tags: ["React", "GSAP", "Three.js", "Framer Motion"],
+      liveUrl: "https://yogeshdev.in/",
+      githubUrl: "https://github.com/Jatinverma9728/new-yogesh-portfolio.git",
+      color: "#8401ff",
     },
     {
       title: "Chawla Architects",
@@ -356,18 +464,7 @@ function App() {
       liveUrl: "https://averiq.vercel.app/",
       githubUrl: "https://github.com/Jatinverma9728/averiq-original.git",
       color: "#22c55e",
-    },
-    {
-      title: "One Place E-commerce",
-      description:
-        "OnePlace is an ecommerce website offering various home services and products.",
-      image:
-        "https://d3jlwjv6gmyigl.cloudfront.net/images/2020/02/Delivery.jpg",
-      tags: ["JavaScript", " Typed.js", "TailwindCSS", "GSAP"],
-      liveUrl: "https://one-place-one.vercel.app/index.html",
-      githubUrl: "https://github.com/Jatinverma9728/one-place.git",
-      color: "#000000",
-    },
+    }
   ];
 
   const handleInputChange = (
@@ -914,7 +1011,7 @@ function App() {
 
             {/* Category Filters */}
             <div className="flex justify-start md:justify-center gap-4 mb-12 overflow-x-auto pb-4 px-2 -mx-2 md:overflow-x-hidden md:pb-0 md:px-0 md:-mx-0 hide-scrollbar">
-              {["All", "Frontend", "Backend", "Databse", "Language"].map(
+              {["All", "Frontend", "Backend", "Database", "Language", "Cloud","Tools","DevOps"].map(
                 (category) => (
                   <button
                     key={category}

@@ -1,8 +1,6 @@
-import { Suspense, lazy } from "react";
 import { memo } from "react";
 
 // Lazy load the Spline component
-const LazySpline = lazy(() => import("@splinetool/react-spline"));
 
 const Scene3D = memo(() => {
   return (
