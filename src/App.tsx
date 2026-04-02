@@ -776,7 +776,7 @@ function App() {
               drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
             >
               I'm a{" "}
-              <span className="text-orange-400">BCA final-year student</span>{" "}
+              <span className="text-orange-400">MCA first-year student</span>{" "}
               and
               <span className="text-orange-400">
                 {" "}
@@ -812,7 +812,7 @@ function App() {
                 View Projects
               </a>
               <a
-                href="https://drive.google.com/file/d/1-etEPuL8-Lw6DJAbvmOlroB2ZkjbmRR6/view?usp=sharing"
+                href="https://drive.google.com/file/d/16EID4qXjN_GrSuNLrBCfVRNRm-vwa2Yj/view?usp=sharing"
                 download="Jatin_Verma_Resume.pdf"
                 className="flex items-center justify-center gap-2 bg-gray-800/50 text-white 
                           px-6 py-2.5 rounded-full hover:bg-gray-800 transition-all transform 
