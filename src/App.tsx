@@ -761,8 +761,9 @@ function App() {
         </nav>
       </header>
 
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
+      <main>
+        {/* Hero Section */}
+        <section className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <MemoizedScene3D />
         </div>
@@ -1075,6 +1076,8 @@ function App() {
                                 src={skill.image}
                                 alt={skill.name}
                                 className="w-10 h-10"
+                                loading="lazy"
+                                decoding="async"
                               />
                             </div>
                             {/* Small category badge */}
@@ -1166,6 +1169,8 @@ function App() {
                         src={project.image}
                         alt={project.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        loading="lazy"
+                        decoding="async"
                       />
 
                       {/* Hover Overlay Content */}
@@ -1175,6 +1180,8 @@ function App() {
                       >
                         <a
                           href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="project-btn bg-white/10 hover:bg-white/20 backdrop-blur-sm"
                           aria-label="View Live Site"
                         >
@@ -1182,6 +1189,8 @@ function App() {
                         </a>
                         <a
                           href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="project-btn bg-white/10 hover:bg-white/20 backdrop-blur-sm"
                           aria-label="View Source Code"
                         >
@@ -1443,6 +1452,8 @@ function App() {
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full filter blur-3xl"></div>
         </div>
       </section>
+
+      </main>
 
       {/* Footer */}
       <footer className="py-20 relative overflow-hidden border-t border-orange-500/20">

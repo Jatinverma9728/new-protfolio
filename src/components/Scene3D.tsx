@@ -14,15 +14,20 @@ const Scene3D = memo(() => {
         pointerEvents: "none",
       }}
     >
-      <img
-        src="/line-v-2.gif" // Path to your GIF in the public folder
-        alt="Background GIF"
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
         style={{
           width: "100%",
           height: "100%",
-          objectFit: "cover", // Ensure the GIF covers the entire area
+          objectFit: "cover", // Ensure the video covers the entire area
         }}
-      />
+      >
+        <source src="/1.mp4" type="video/mp4" />
+        Background Video
+      </video>
     </div>
   );
 });
