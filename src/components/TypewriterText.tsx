@@ -2,10 +2,7 @@ import Typewriter from "typewriter-effect";
 
 const TypewriterText = () => {
   return (
-    <div className="inline">
-      <span className="text-gray-200">I'm </span>
-      <span className="text-gray-200">Jatin </span>
-      <span className="text-orange-500">Verma</span>
+    <div style={{ display: "inline" }}>
       <Typewriter
         options={{
           strings: [
@@ -19,6 +16,8 @@ const TypewriterText = () => {
           delay: 50,
           deleteSpeed: 30,
           cursor: "|",
+          wrapperClassName: "typewriter-wrapper",
+          cursorClassName: "typewriter-cursor",
         }}
       />
     </div>
