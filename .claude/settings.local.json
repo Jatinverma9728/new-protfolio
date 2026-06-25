@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:devjatin.in)",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "WebFetch(domain:www.reddit.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:www.linkedin.com)"
+    ]
+  }
+}

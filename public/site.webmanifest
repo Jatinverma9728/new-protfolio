@@ -1,0 +1,26 @@
+{
+  "name": "Jatin Verma - Full Stack Developer & UI/UX Designer",
+  "short_name": "JV Portfolio",
+  "description": "Portfolio of Jatin Verma, Full Stack Developer specializing in React, Next.js & MERN stack.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0B0B0F",
+  "background_color": "#0B0B0F",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

@@ -278,9 +278,9 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section 
-      ref={heroRef} 
-      className="hero" 
+    <section
+      ref={heroRef}
+      className="hero"
       id="hero"
       style={{
         position: 'relative',
@@ -293,6 +293,8 @@ export default function HeroSection() {
         background: 'var(--color-bg)',
       }}
     >
+      <h1 className="sr-only">Jatin Verma - Full Stack Developer & UI/UX Designer</h1>
+
       {/* Particle Canvas */}
       <canvas
         ref={canvasRef}

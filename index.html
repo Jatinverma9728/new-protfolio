@@ -12,13 +12,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400&display=swap"
       rel="stylesheet"
     />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Primary SEO Meta Tags -->
     <title>Jatin Verma | Full Stack Developer & UI/UX Designer</title>
-    <meta name="description" content="Official portfolio of Jatin Verma, a Full Stack Developer & UI/UX Designer specializing in React, Next.js, Node.js, Express, MongoDB, and high-performance interactive web experiences." />
+    <meta name="description" content="Jatin Verma - Full Stack Developer specializing in React, Next.js & MERN stack. View 5+ interactive projects and get in touch for collaborations." />
     <meta name="keywords" content="Jatin Verma, Jatin Verma portfolio, Full Stack Developer, React Developer, MERN Stack Developer, UI/UX Designer, MCA Student, Web Developer India, Bhiwani Developer, Creative Frontend Developer" />
     <meta name="author" content="Jatin Verma" />
     <meta name="robots" content="index, follow" />
@@ -32,11 +33,11 @@
     <meta property="og:image" content="https://devjatin.in/og-image.jpg" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://devjatin.in/" />
-    <meta property="twitter:title" content="Jatin Verma | Full Stack Developer & UI/UX Designer" />
-    <meta property="twitter:description" content="Discover modern web applications, interactive MERN stack projects, and responsive user interfaces crafted by Jatin Verma." />
-    <meta property="twitter:image" content="https://devjatin.in/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://devjatin.in/" />
+    <meta name="twitter:title" content="Jatin Verma | Full Stack Developer & UI/UX Designer" />
+    <meta name="twitter:description" content="Discover modern web applications, interactive MERN stack projects, and responsive user interfaces crafted by Jatin Verma." />
+    <meta name="twitter:image" content="https://devjatin.in/og-image.jpg" />
 
     <!-- Schema.org JSON-LD Structured Data Graph -->
     <script type="application/ld+json">
@@ -66,7 +67,8 @@
             },
             "alumniOf": {
               "@type": "EducationalOrganization",
-              "name": "Master of Computer Applications (MCA)"
+              "name": "University",
+              "department": "Master of Computer Applications (MCA)"
             },
             "description": "Jatin Verma is a Full Stack Developer and UI/UX Designer specializing in advanced interactive web applications and scalable client portfolios."
           },
@@ -79,6 +81,54 @@
             "publisher": {
               "@id": "https://devjatin.in/#person"
             }
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://devjatin.in/#profilepage",
+            "mainEntity": { "@id": "https://devjatin.in/#person" },
+            "dateCreated": "2024-01-01",
+            "dateModified": "2026-05-27"
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://devjatin.in/#projects",
+            "name": "Portfolio Projects",
+            "numberOfItems": 8,
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@type": "CreativeWork",
+                  "name": "North Tech Hub",
+                  "description": "Scalable e-commerce and online course platform with payment integration",
+                  "url": "https://northtechhub.in/",
+                  "creator": { "@id": "https://devjatin.in/#person" }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@type": "CreativeWork",
+                  "name": "Love File",
+                  "description": "File conversion tool for images and PDF documents",
+                  "url": "https://lovefile.shop/",
+                  "creator": { "@id": "https://devjatin.in/#person" }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                  "@type": "CreativeWork",
+                  "name": "Chawla Architects",
+                  "description": "Professional architecture firm portfolio website",
+                  "url": "https://www.chawlaarchitects.com/",
+                  "creator": { "@id": "https://devjatin.in/#person" }
+                }
+              }
+            ]
           }
         ]
       }
@@ -86,6 +136,32 @@
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <div style="max-width:800px;margin:0 auto;padding:2rem;font-family:sans-serif;color:#E8E4DD;background:#0B0B0F;min-height:100vh;">
+        <h1>Jatin Verma - Full Stack Developer & UI/UX Designer</h1>
+        <p>Passionate MCA student and full-stack developer specializing in React, Next.js, Node.js, TypeScript, and the MERN stack. Based in Bhiwani, India.</p>
+        <h2>Skills</h2>
+        <p>React, TypeScript, Next.js, Node.js, Express.js, MongoDB, MySQL, Redis, Firebase, AWS, Docker, Kubernetes, Tailwind CSS, GSAP, Three.js</p>
+        <h2>Projects</h2>
+        <ul>
+          <li><a href="https://northtechhub.in/">North Tech Hub</a> - Scalable E-commerce & Course Platform (Next.js, MongoDB, Razorpay)</li>
+          <li><a href="https://acharam.vercel.app/">Acharam</a> - Full Stack E-commerce (React, MERN Stack)</li>
+          <li><a href="https://lovefile.shop/">Love File</a> - File Conversion Tools (Next.js, TypeScript)</li>
+          <li><a href="https://www.chawlaarchitects.com/">Chawla Architects</a> - Architecture Portfolio (Next.js, Framer Motion)</li>
+          <li><a href="https://premium-construction-1.vercel.app/">Premium Construction</a> - Construction Company Website (Next.js, GSAP)</li>
+          <li><a href="https://averiq.vercel.app/">Averiq</a> - Tech Company Website (React, GSAP)</li>
+        </ul>
+        <h2>Experience</h2>
+        <ul>
+          <li>Internship - Team Lead Frontend at SmallFare (March 2025 - June 2025)</li>
+          <li>MERN Stack Full Stack Development (June 2024 - Present)</li>
+          <li>Frontend Development (June 2023 - Present)</li>
+        </ul>
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:vermajatin447@gmail.com">vermajatin447@gmail.com</a></p>
+        <p><a href="https://github.com/Jatinverma9728">GitHub</a> | <a href="https://www.linkedin.com/in/jatinverma9728/">LinkedIn</a></p>
+      </div>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

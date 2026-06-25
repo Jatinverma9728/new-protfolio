@@ -105,7 +105,9 @@ export default function ContactSection() {
           <div className="contact-form-card">
             <form onSubmit={handleSubmit}>
               <div className="form-field">
+                <label htmlFor="contact-name" className="sr-only">Your name</label>
                 <input
+                  id="contact-name"
                   type="text"
                   name="name"
                   placeholder="Your name"
@@ -117,7 +119,9 @@ export default function ContactSection() {
                 />
               </div>
               <div className="form-field">
+                <label htmlFor="contact-email" className="sr-only">Email address</label>
                 <input
+                  id="contact-email"
                   type="email"
                   name="email"
                   placeholder="Email address"
@@ -129,7 +133,9 @@ export default function ContactSection() {
                 />
               </div>
               <div className="form-field">
+                <label htmlFor="contact-message" className="sr-only">Your message</label>
                 <textarea
+                  id="contact-message"
                   name="message"
                   placeholder="Your message"
                   rows={5}

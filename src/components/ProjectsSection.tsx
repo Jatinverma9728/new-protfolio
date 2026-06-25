@@ -32,6 +32,8 @@ export default function ProjectsSection() {
                   alt={project.title}
                   loading="lazy"
                   decoding="async"
+                  width={600}
+                  height={400}
                 />
                 <div className="project-image-overlay" />
               </div>

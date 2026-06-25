@@ -1,0 +1,39 @@
+# Jatin Verma - Full Stack Developer & UI/UX Designer
+
+## About
+Jatin Verma is a Full Stack Developer and UI/UX Designer based in Bhiwani, Haryana, India. He is currently pursuing a Master of Computer Applications (MCA) and has 3+ years of experience building modern web applications. He specializes in the MERN stack (MongoDB, Express.js, React, Node.js) along with Next.js, TypeScript, and cloud technologies.
+
+## Technical Skills
+- Frontend: React, Next.js, TypeScript, JavaScript, Tailwind CSS, GSAP, Framer Motion, Three.js
+- Backend: Node.js, Express.js, Python
+- Databases: MongoDB, MySQL, Redis, Firebase
+- Cloud & DevOps: AWS, Docker, Kubernetes, Jenkins, Terraform, GitLab CI/CD
+- Tools: Git, GitHub, VS Code
+
+## Professional Experience
+- Team Lead Frontend at SmallFare (March 2025 - June 2025)
+- Full Stack MERN Development (June 2024 - Present)
+- Frontend Development (June 2023 - Present)
+
+## Notable Projects
+- North Tech Hub (northtechhub.in) - Scalable e-commerce and online course platform with Razorpay payment integration
+- Love File (lovefile.shop) - File conversion tool supporting image format conversion and PDF manipulation
+- Chawla Architects (chawlaarchitects.com) - Professional architecture firm portfolio
+- Acharam - Full stack e-commerce website with authentication and shopping cart
+- Premium Construction - Construction company website with animations
+- Averiq - Tech company website with modern design
+
+## Services Offered
+- Full Stack Web Development
+- Frontend Development (React, Next.js)
+- Backend Development (Node.js, Express)
+- UI/UX Design
+- E-commerce Development
+- Portfolio & Business Websites
+
+## Contact
+- Website: https://devjatin.in
+- Email: vermajatin447@gmail.com
+- GitHub: https://github.com/Jatinverma9728
+- LinkedIn: https://www.linkedin.com/in/jatinverma9728/
+- Location: Bhiwani, Haryana, India (Available Remote Worldwide)

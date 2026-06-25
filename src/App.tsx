@@ -32,8 +32,8 @@ function App() {
       {/* Navbar */}
       <Navbar />
 
-      {/* Main Content */}
-      <main>
+      {/* Main Content - always in DOM for crawlers */}
+      <main style={{ visibility: isLoading ? 'hidden' : 'visible' }}>
         <HeroSection />
         <AboutSection />
         <ExperienceSection />

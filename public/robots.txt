@@ -3,4 +3,11 @@ Allow: /
 Disallow: /dist/
 Disallow: /node_modules/
 
+# Block AI training crawlers (not search)
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
 Sitemap: https://devjatin.in/sitemap.xml
